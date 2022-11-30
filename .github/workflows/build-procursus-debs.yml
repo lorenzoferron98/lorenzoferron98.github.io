@@ -775,11 +775,11 @@ jobs:
         if: ${{ success() || failure() }}
         working-directory: ./my_repo
         run: |
-	  mkdir -vp /tmp/${{ matrix.cfver }}/bootstrap && unzstd -d -vvvv ../Procursus/build_strap/$MEMO_TARGET/${{ matrix.cfver }}/bootstrap.tar.zst -o /tmp/${{ matrix.cfver }}/bootstrap.tar
+          mkdir -vp /tmp/${{ matrix.cfver }}/bootstrap && unzstd -d -vvvv ../Procursus/build_strap/$MEMO_TARGET/${{ matrix.cfver }}/bootstrap.tar.zst -o /tmp/${{ matrix.cfver }}/bootstrap.tar
           tar -xvf /tmp/${{ matrix.cfver }}/bootstrap.tar -C /tmp/${{ matrix.cfver }}/bootstrap
-	  cp -v ./repos/anfora-repo.gpg /tmp/${{ matrix.cfver }}/bootstrap/private/etc/apt/trusted.gpg.d/
-	  tar -cvf ./repos/${{ matrix.cfver }}/bootstrap.tar -C /tmp/${{ matrix.cfver }}/bootstrap/ .
-	  git add .
+          cp -v ./repos/anfora-repo.gpg /tmp/${{ matrix.cfver }}/bootstrap/private/etc/apt/trusted.gpg.d/
+          tar -cvf ./repos/${{ matrix.cfver }}/bootstrap.tar -C /tmp/${{ matrix.cfver }}/bootstrap/ .
+          git add .
           git commit -m "Upload bootstrap"
 
       - name: Commit binpack
