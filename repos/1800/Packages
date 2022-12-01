@@ -2434,6 +2434,44 @@ SHA256: 21ffdb7be3ce37342883808d1db804a5492540246c67b9c93cb6f75bd3297c27
 SHA512: b6cac64fb27ac87c9616c84e2b9ecbdf5d44e40c9df8ce6384eebe6b89c6836ea9bc9ba89d153fd37023fc13a16e89827e62effb9e74ffab21a691e1d630810e
 Description: Library for handling Apple binary and XML property lists
 
+Package: libssh2-1
+Architecture: iphoneos-arm
+Version: 1.10.0-1
+Priority: optional
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 324
+Provides: libssh2 (= 1.10.0-1)
+Depends: libiosexec1 (>= 1.2.2), libssl3
+Conflicts: libssh2 (<< 1.10.0-1)
+Replaces: libssh2 (<< 1.10.0-1)
+Filename: ./debs/libssh2/libssh2-1_1.10.0-1_iphoneos-arm.deb
+Size: 148650
+MD5sum: 14059179cc0ba9b2c2470aeb5b0ae989
+SHA1: 8ce140ad3a641e3fd7c31b1d87117c959e2fe3ce
+SHA256: 24265b05e9015b0f378549b40eca5f581dc16a62a8fb11b4f7436a3de46dd7dd
+SHA512: f91defff391d2b82c590fc04185c10b28a8e51bb4f5e12de0d6d31fbf9071d6c5ef621c462aecab0bf79010f191a60b905f7bb077d3a931550c8ce6822230a54
+Homepage: https://www.libssh2.org/
+Description: SSH2 client-side library
+
+Package: libssh2-dev
+Architecture: iphoneos-arm
+Version: 1.10.0-1
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 1464
+Depends: libssh2-1 (>= 1.10.0-1)
+Conflicts: libssh2 (<< 1.10.0-1)
+Filename: ./debs/libssh2/libssh2-dev_1.10.0-1_iphoneos-arm.deb
+Size: 482876
+MD5sum: d3ee09d70cac9509cd28b1ef0341c5f4
+SHA1: 532be1d87d5b1b361fe5101a434c5f893820a375
+SHA256: 4aca26ef3e37552b3c9799a1bde460117c21fdbdfecb1bb17d737a98c5fd03c5
+SHA512: f69295242b42db16e79076f1a02f4a5dbe7a659befe456759be01a3f1b49a4022f0c15b5210e33c8679176e8428d5760eacba494993e230dc9fbd95dc2311e3f
+Homepage: https://www.libssh2.org/
+Description: SSH2 client-side library (development headers)
+
 Package: libtasn1-6-dev
 Architecture: iphoneos-arm
 Version: 4.18.0
@@ -3090,6 +3128,110 @@ SHA1: 578625dc792a4d82519a35a41d7d2f4fb5559434
 SHA256: 5454b3df874db2edd64ab6d03478a41b0c936a8803ab5bdfd8d35ab7341140f6
 SHA512: 9360e000a6122423afac424c35e8d48ff6935ed2ca9c4d270754c8bfd16e7ff26f79c093d7999562cd579669983e9159b9be0af0231e669ec7150b3297a68952
 Description: arp, ndp, traceroute, mnc, mtest, traceroute6, ifconfig, ip6addrctl, netstat, ping6, route, rtsol
+
+Package: libnghttp2-14
+Architecture: iphoneos-arm
+Version: 1.47.0
+Priority: standard
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 176
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/nghttp2/libnghttp2-14_1.47.0_iphoneos-arm.deb
+Size: 52262
+MD5sum: 9e283b3acf215d8bbe2ff47920d812d6
+SHA1: 58644585f279ca1949149c1d9e6183b17fd05b63
+SHA256: 9e192a8f97e90b5017cc62abbdbb4e925cb2e05b8fa7ce0f48ff0592055991f0
+SHA512: 583b7554b09568682e403e4223a5ed8c12f7f900d65e86844570a683a4e1448c325f19406e985494264f0b62b92fccf30829bab50fa82b2d8aaeb9f595c8dfe1
+Homepage: https://nghttp2.org/
+Description: library implementing HTTP/2 protocol (shared library)
+ This is an implementation of the Hypertext Transfer Protocol version
+ 2 in C. The framing layer of HTTP/2 is implemented as a reusable C
+ library.
+ .
+ This package installs a shared library.
+
+Package: libnghttp2-dev
+Architecture: iphoneos-arm
+Version: 1.47.0
+Priority: standard
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 628
+Depends: libnghttp2-14 (= 1.47.0)
+Filename: ./debs/nghttp2/libnghttp2-dev_1.47.0_iphoneos-arm.deb
+Size: 216496
+MD5sum: 75cba6b97db3fbb361be14129985fbf9
+SHA1: 7894692a43b5abc06e1b2a73b7786f650b1ae8e0
+SHA256: f5d0aab2133653dfdc6bec3cc1fc0fd48f625c888cfc99b52f5e6ea46d65abe2
+SHA512: b97983d8209f34426e57fa7d1e0e7c4c6cd5917792becf57b0986efe8bf6fe05e2667c0defc878dc5aae17b89ef67a01988e770354ba1c3f08b7fc35b7b9b4ed
+Homepage: https://nghttp2.org/
+Description: library implementing HTTP/2 protocol (development files)
+ This is an implementation of the Hypertext Transfer Protocol version
+ 2 in C. The framing layer of HTTP/2 is implemented as a reusable C
+ library.
+ .
+ This package installs development files.
+
+Package: nghttp2-client
+Architecture: iphoneos-arm
+Version: 1.47.0
+Priority: standard
+Section: Networking
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 228
+Depends: libiosexec1 (>= 1.2.2), libnghttp2-14 (= 1.47.0), libc-ares2, libev4, libjansson4, libjemalloc2, libssl3, libnghttp3-2, libngtcp2-3
+Filename: ./debs/nghttp2/nghttp2-client_1.47.0_iphoneos-arm.deb
+Size: 72432
+MD5sum: 28619fffadc67273f6e60f7a6f932f87
+SHA1: 0137603aea79717c575da447f71e7127ef96fa22
+SHA256: 6bfed846f7d9c3934cee66e19631fd0727aaa60101b3d0cc0caef706639f87e5
+SHA512: c2c64a58c4924ee62f3f3095d3130411a86c5360c047a3878a1d18696ba14f69f6625cddac10c9ee718c2e7fac5316ec020d99698e706a89310a1afcf6a17721
+Homepage: https://nghttp2.org/
+Description: client implementing HTTP/2 protocol
+ This is a command line client implementing the HTTP/2 protocol. It
+ gives access to many low-level and advanced aspects of the protocol
+ and therefore is useful for debugging.
+
+Package: nghttp2-proxy
+Architecture: iphoneos-arm
+Version: 1.47.0
+Priority: standard
+Section: Networking
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 944
+Depends: libiosexec1 (>= 1.2.2), libnghttp2-14 (= 1.47.0), libc-ares2, libev4, libjansson4, libjemalloc2, libssl3, libngtcp2-3, libnghttp3-2
+Filename: ./debs/nghttp2/nghttp2-proxy_1.47.0_iphoneos-arm.deb
+Size: 324044
+MD5sum: 881b32ef5ab07312d111ec04f054bdb4
+SHA1: 66cb1af084324efc6ef02a15baefe966fc3770dd
+SHA256: ee314e5c1dcd331d1dce91f97dfbfb2c3b7fa3d8b8e96bbc1291da551a99cf79
+SHA512: 0caef0e4422d51ce19198eb594fd5aec8b05c00023cfeaefe2cde5929909e9f9fdfd353f888891b6f51d4f749a65c2c1ad9f8524f288df64f0f77792cf3fd4a0
+Homepage: https://nghttp2.org/
+Description: reverse proxy implementing HTTP/2 protocol
+ This is a standalone server implementing the HTTP/2 protocol with
+ HTTP/1.1 fallback for clients that do not support it. It can be used
+ as a frontend in front of web servers that do not support HTTP/2.
+
+Package: nghttp2-server
+Architecture: iphoneos-arm
+Version: 1.47.0
+Priority: standard
+Section: Networking
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 192
+Depends: libiosexec1 (>= 1.2.2), libnghttp2-14 (= 1.47.0), libc-ares2, libev4, libjansson4, libjemalloc2, libssl3, libnghttp3-2, libngtcp2-3
+Filename: ./debs/nghttp2/nghttp2-server_1.47.0_iphoneos-arm.deb
+Size: 63300
+MD5sum: 63ce43a88bf4de4e7da73b733d55f94e
+SHA1: 0a01635270adc6d5c80ec87f3b8b069ae67bbea1
+SHA256: 85c9b23f8acdbeebc82820f1d1346a603edc164eacec16d221ece7294973deec
+SHA512: 1571839cd08023b0cda7ee59ad48470671d07075095284ef8a6ce87a5ab6632bb21abe5d8b995bc2646d2e39ac753a7fbf929f5b41310190debab5e774aa4cf2
+Homepage: https://nghttp2.org/
+Description: server implementing HTTP/2 protocol
+ This is a standalone server implementing the HTTP/2 protocol with
+ HTTP/1.1 fallback for clients that do not support it. It can be used
+ to serve files from a local directory.
 
 Package: nickchan-keyring
 Architecture: all
@@ -3806,6 +3948,69 @@ SHA1: 6c09987ef1dca5815d3fa7f29ab9bc7450a6b761
 SHA256: d36ef6b5dde9712928350b405d61368ea317203546ce2fa4b85fd0e3da92537e
 SHA512: 32e36fe3d159ff4803436d603a68b7ef044b4487b9c3901a209afd3bdcf8f4ada6d90efc67bba0140777571ae908fcac2b092a1584bc8116b317a6785623aa28
 Description: GNU readline and history libraries, run-time libraries
+
+Package: librtmp-dev
+Architecture: iphoneos-arm
+Version: 2.4+20151223.gitfa8646d.1
+Priority: standard
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 304
+Depends: libgnutls30-dev, nettle-dev, libgmp-dev, librtmp1 (= 2.4+20151223.gitfa8646d.1)
+Filename: ./debs/rtmpdump/librtmp-dev_2.4+20151223.gitfa8646d.1_iphoneos-arm.deb
+Size: 155762
+MD5sum: ddd5a31a1eaeb4aa7bee84d06b65d4b9
+SHA1: 6f211384870533699686335b00b818f71877cde2
+SHA256: 328b30b923d91d868f874fbf775b2c893ac784330b38f0e8547c3c58235f8392
+SHA512: cbe41d882e336c20a41627109e7ab919b622e8747af13ec2149130e48bab9c4fd14b577b023d41077b2de783cf190ab2837826656049117a928192d2af022b4d
+Description: toolkit for RTMP streams (development files)
+ A small dumper for media content streamed over the RTMP protocol (like BBC's
+ iPlayer high quality streams). Supplying an RTMP URL will result in a dumped
+ flv file, which can be played/transcoded with standard tools.
+ .
+ This package contains the development libraries, header files needed by
+ programs that want to compile with librtmp.
+
+Package: librtmp1
+Architecture: iphoneos-arm
+Version: 2.4+20151223.gitfa8646d.1
+Priority: standard
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 200
+Depends: libiosexec1 (>= 1.2.2), libgnutls30, libhogweed6, libnettle8, libgmp10
+Filename: ./debs/rtmpdump/librtmp1_2.4+20151223.gitfa8646d.1_iphoneos-arm.deb
+Size: 66978
+MD5sum: 8f0340e7c76fca1a4b968e7f5d2420bc
+SHA1: 3fa80c888b550f436b3c3bccca2eaf6f8ef188ad
+SHA256: 231832f8bfbd949cf54b924318504a752970fbe342b964b8a2097bfbd675ade8
+SHA512: b863b7d12d7c48c3a6522fb69d66a123870641c961148869c0b0cf29be618c029ccfad1632528cdba69e66a4f88b9653fa353557b240c30c0f0ab78e5b381e0f
+Description: toolkit for RTMP streams (shared library)
+ A small dumper for media content streamed over the RTMP protocol (like BBC's
+ iPlayer high quality streams). Supplying an RTMP URL will result in a dumped
+ flv file, which can be played/transcoded with standard tools.
+ .
+ This package contains the shared libraries, header files needed by
+ programs that want to use librtmp.
+
+Package: rtmpdump
+Architecture: iphoneos-arm
+Version: 2.4+20151223.gitfa8646d.1
+Priority: standard
+Section: Utilities
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 260
+Depends: libiosexec1 (>= 1.2.2), libgnutls30, libhogweed6, libnettle8, libgmp10, librtmp1
+Filename: ./debs/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1_iphoneos-arm.deb
+Size: 49800
+MD5sum: acce135040af6f7793ce263103998c23
+SHA1: 0dbab000623bf35b143f6c3529ed3e8b1e4c0fa5
+SHA256: ddaba8490f8b409be7366117adc2def295ca3cdf50d82396dca73323e8e4ca22
+SHA512: e2f56b136a2d8c00fb575feee9270032adef81e868629df9fc0ba2ec99875b27afa0b4e7629a76daa8a626f579654044655a36e421173400fd318eed9159e485
+Description: small dumper for media content streamed over the RTMP protocol
+ A small dumper for media content streamed over the RTMP protocol (like BBC's
+ iPlayer high quality streams). Supplying an RTMP URL will result in a dumped
+ flv file, which can be played/transcoded with standard tools.
 
 Package: sed
 Architecture: iphoneos-arm
