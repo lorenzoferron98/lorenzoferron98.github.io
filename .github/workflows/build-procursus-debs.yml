@@ -795,7 +795,8 @@ jobs:
         if: ${{ success() || failure() }}
         working-directory: ./my_repo
         run: |
-          rsync --progress -r -u -v --exclude ../Procursus/build_dist/$MEMO_TARGET/${{ matrix.cfver }}/work/ ../Procursus/build_dist/$MEMO_TARGET/${{ matrix.cfver }}/* ./repos/${{ matrix.cfver }}/debs/
+          rm -vrf ../Procursus/build_dist/$MEMO_TARGET/${{ matrix.cfver }}/work/
+          rsync --progress -r -u -v ../Procursus/build_dist/$MEMO_TARGET/${{ matrix.cfver }}/* ./repos/${{ matrix.cfver }}/debs/
           git add .
           git commit -m "Upload packages"
 
