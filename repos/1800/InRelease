@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Origin: Procursus (for AnForA iPhone)
 Label: Procursus (for AnForA iPhone)
 Suite: stable
@@ -71,3 +74,10 @@ SHA512:
  fe7f9114d01ec522d015463f2551f7970f3befcbf22f9e77abb5e70957bc022b1d2e221f3c6225bd36801e689d83130d0302fbd2a978f860eb38496a794ef0be            78108 Packages.xz
  0d6bc4548911a0b1ebe197d3843149bb099b04f0da35252a7a18d8e0218b79a69f3255f8ca798cc420b825df09981fb54e491557b6ba5b7b1e6d347e00fe904f            80591 Packages.zst
  01997bd5c605dbf62ac5b41af6dffbbaf2be8203959ca6e75c1a0a58614446f74156260a19d14b562e1c993af72acc43fd9ab73a4aa1532126efc8bf5df63b5d               38 Release
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQSJbMnnCMhHIQoik/KZcjNZDiajogUCY4ihBAAKCRCZcjNZDiaj
+ooJZAP9BuXREMzlMcCDqwO35bMWX772O3Vlz9N7D9TNK0k/WJQD+KyxfulytfKJv
+ClFgD7bskSopSWB6gYrLgOaqFuxcKQo=
+=rSms
+-----END PGP SIGNATURE-----
