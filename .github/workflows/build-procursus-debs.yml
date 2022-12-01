@@ -738,6 +738,24 @@ jobs:
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libtomcrypt-package
 
+      - name: Build rtmpdump
+        if: ${{ success() || failure() }}
+        working-directory: ./Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake rtmpdump-package
+
+      - name: Build libssh2
+        if: ${{ success() || failure() }}
+        working-directory: ./Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libssh2-package
+
+      - name: Build nghttp2
+        if: ${{ success() || failure() }}
+        working-directory: ./Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake nghttp2-package
+
       - name: Package bootstrap
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
