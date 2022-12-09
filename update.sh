@@ -19,10 +19,7 @@ lz4 -c9 Contents-iphoneos-arm > Contents-iphoneos-arm.lz4
 gzip -c9 Contents-iphoneos-arm > Contents-iphoneos-arm.gz
 zstd -c19 Contents-iphoneos-arm > Contents-iphoneos-arm.zst
 
-grep -E "Origin:|Label:|Suite:|Version:|Codename:|Architectures:|Components:|Description:" Release > Base
-apt-ftparchive release . > Release
-cat Base Release > out && mv out Release
-rm -v Base
+apt-ftparchive release -c ../config/iphoneos-arm64.conf . > Release
 
 echo "${2}" | gpg --batch --yes --pinentry-mode=loopback --passphrase-fd 0 -abs -u 896CC9E708C847210A2293F2997233590E26A3A2 -o Release.gpg Release
 echo "${2}" | gpg --batch --yes --pinentry-mode=loopback --passphrase-fd 0 --clearsign -u 896CC9E708C847210A2293F2997233590E26A3A2 -o InRelease Release
