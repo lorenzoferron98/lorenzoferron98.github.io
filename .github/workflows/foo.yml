@@ -125,6 +125,6 @@ jobs:
 
       - name: Build ${{ matrix.package }}
         if: ${{ success() || failure() }}
-        working-directory: ./Procursus
+        working-directory: Procursus
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ inputs.cfVer }} NO_PGP=1 gmake ${{ matrix.package }}-package
