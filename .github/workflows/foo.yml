@@ -117,7 +117,7 @@ jobs:
           files: "Procursus/"
 
       - name: Checkout Procursus
-        if: steps.check_files.outputs.files_exists == 'true'
+        if: steps.check_files.outputs.files_exists == 'false'
         uses: actions/checkout@v3
         with:
           repository: 'lorenzoferron98/Procursus'
