@@ -23,8 +23,16 @@ jobs:
       fail-fast: false
       matrix:
         package: [
-          ldid,
-          libplist
+          lsof, ldid, libplist, apt-package, apt, base, bash, bash-completion, brotli, cacerts, chariz-keyring, coreutils,
+          darwintools, dash, debianutils, diffutils, diskdev-cmds, dpkg, essential, file-cmds, findutils, firmware-sbin,
+          gnupg, grep, havoc-keyring, launchctl, libassuan, libxcrypt, dimentio, libedit, libffi, libgcrypt, libgmp10,
+          gnutls, libgpg, neofetch, libidn2, gettext, dropbear, libiosexec, libkernrw, lz4, xz, libmd, ncurses, nettle,
+          npth, p11-kit, openpam, readline, libtasn1, libunistring, xxhash, zlib-ng, zstd, odyssey-keyring, openssh,
+          openssl, packix-keyring, keyring, profile.d, sed, shell-cmds, shshd, snaputil, sudo, tar, uikittools, vi, zsh,
+          nano, jlutil, curl, cowsay, file, git, htop, make, p7zip, gawk, gettext-localizations, gzip, mpfr4, pam-modules,
+          pcre, system-cmds, unzip, zip, unrar, nickchan-keyring, nyuszika7h-keyring, amy-keyring, adv-cmds, bzip2, iokittools,
+          less, kext-tools, libarchive, network-cmds, plutil, text-cmds, vim, defaults, uuid, libksba, libtommath, libtomcrypt,
+          rtmpdump, libssh2, nghttp2, build-essential, llvm, jtool2
         ]
     steps:
       - name: Download zstd
@@ -129,7 +137,12 @@ jobs:
       - name: Build ${{ matrix.package }}
         working-directory: Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ inputs.cfVer }} NO_PGP=1 gmake ${{ matrix.package }}-package
+          array=("apt gnupg gnutls curl")
+          if [[ " ${array[*]} " =~ " ${{ matrix.package }} " ]]; then
+            MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ inputs.cfVer }} NO_PGP=1 gmake ${{ matrix.package }}-package AARCH64_CCASFLAGS=""
+          else
+            MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ inputs.cfVer }} NO_PGP=1 gmake ${{ matrix.package }}-package
+          fi
 
   package:
     needs: build
@@ -225,7 +238,11 @@ jobs:
         run: |
           mkdir -vp $GITHUB_WORKSPACE/{'binpack','my_repo'}
       
-      
+      - name: Package bootstrap
+        if: ${{ success() || failure() }}
+        working-directory: Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake bootstrap      
 
       - name: Checkout binpack
         if: ${{ success() || failure() }}
@@ -235,7 +252,11 @@ jobs:
           submodules: 'recursive'
           path: 'binpack'
 
-
+      - name: Package binpack
+        if: ${{ success() || failure() }}
+        working-directory: binpack
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} MEMO_NO_IOSEXEC=1 NO_PGP=1 BINPACK_THICK=1 gmake binpack
 
       - name: Checkout my repo
         if: ${{ success() || failure() }}
@@ -250,7 +271,40 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '30465144+github-actions[bot]@users.noreply.github.com'
 
+      - name: Commit bootstrap
+        if: ${{ success() || failure() }}
+        working-directory: my_repo
+        run: |
+          mkdir -vp /tmp/${{ matrix.cfver }}/bootstrap && unzstd -d -vvvv ../Procursus/build_strap/$MEMO_TARGET/${{ matrix.cfver }}/bootstrap.tar.zst -o /tmp/${{ matrix.cfver }}/bootstrap.tar
+          tar -xvf /tmp/${{ matrix.cfver }}/bootstrap.tar -C /tmp/${{ matrix.cfver }}/bootstrap
+          cp -v ./repos/anfora-repo.gpg /tmp/${{ matrix.cfver }}/bootstrap/private/etc/apt/trusted.gpg.d/
+          tar -cvf ./repos/${{ matrix.cfver }}/bootstrap.tar -C /tmp/${{ matrix.cfver }}/bootstrap/ .
+          git add .
+          git commit -m "Upload bootstrap"
 
+      - name: Commit binpack
+        if: ${{ success() || failure() }}
+        working-directory: my_repo
+        run: |
+          mv -v ../binpack/build_strap/$MEMO_TARGET/${{ matrix.cfver }}/binpack-thick.tar ./repos/${{ matrix.cfver }}/
+          mv -v ../binpack/build_strap/$MEMO_TARGET/${{ matrix.cfver }}/binpack-thick.tc ./repos/${{ matrix.cfver }}/
+          git add .
+          git commit -m "Upload binpack"
+
+      - name: Commit packages
+        if: ${{ success() || failure() }}
+        working-directory: my_repo
+        run: |
+          rm -vrf ../Procursus/build_dist/$MEMO_TARGET/${{ matrix.cfver }}/work/
+          rsync --progress -r -u -v ../Procursus/build_dist/$MEMO_TARGET/${{ matrix.cfver }}/* ./repos/${{ matrix.cfver }}/debs/
+          git add .
+          git commit -m "Upload packages"
+
+      - name: Push bootstrap, binpack and packages
+        if: ${{ success() || failure() }}
+        working-directory: my_repo
+        run: |
+          git push
 
       - name: Cleanup
         if: ${{ success() || failure() }}
