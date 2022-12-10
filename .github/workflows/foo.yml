@@ -22,7 +22,10 @@ jobs:
       max-parallel: 1
       fail-fast: false
       matrix:
-        package: [ ldid, libplist ]
+        package: [
+          ldid,
+          libplist
+        ]
     steps:
       - name: Download zstd
         id: download-zstd
@@ -253,7 +256,6 @@ jobs:
         if: ${{ success() || failure() }}
         working-directory: my_repo
         run: |
-          brew install gh
           gh extension install actions/gh-actions-cache
           
           REPO=${{ github.repository }}
