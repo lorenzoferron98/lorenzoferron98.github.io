@@ -22,19 +22,18 @@ jobs:
       max-parallel: 1
       fail-fast: false
       matrix:
-        package: |
-          [
-            lsof, ldid, libplist, apt-package, apt, base, bash, bash-completion, brotli, cacerts, chariz-keyring, coreutils,
-            darwintools, dash, debianutils, diffutils, diskdev-cmds, dpkg, essential, file-cmds, findutils, firmware-sbin,
-            gnupg, grep, havoc-keyring, launchctl, libassuan, libxcrypt, dimentio, libedit, libffi, libgcrypt, libgmp10,
-            gnutls, libgpg, neofetch, libidn2, gettext, dropbear, libiosexec, libkernrw, lz4, xz, libmd, ncurses, nettle,
-            npth, p11-kit, openpam, readline, libtasn1, libunistring, xxhash, zlib-ng, zstd, odyssey-keyring, openssh,
-            openssl, packix-keyring, keyring, profile.d, sed, shell-cmds, shshd, snaputil, sudo, tar, uikittools, vi, zsh,
-            nano, jlutil, curl, cowsay, file, git, htop, make, p7zip, gawk, gettext-localizations, gzip, mpfr4, pam-modules,
-            pcre, system-cmds, unzip, zip, unrar, nickchan-keyring, nyuszika7h-keyring, amy-keyring, adv-cmds, bzip2, iokittools,
-            less, kext-tools, libarchive, network-cmds, plutil, text-cmds, vim, defaults, uuid, libksba, libtommath, libtomcrypt,
-            rtmpdump, libssh2, nghttp2, build-essential, llvm, jtool2
-          ]
+        package: [
+          lsof, ldid, libplist, apt-package, apt, base, bash, bash-completion, brotli, cacerts, chariz-keyring, coreutils,
+          darwintools, dash, debianutils, diffutils, diskdev-cmds, dpkg, essential, file-cmds, findutils, firmware-sbin,
+          gnupg, grep, havoc-keyring, launchctl, libassuan, libxcrypt, dimentio, libedit, libffi, libgcrypt, libgmp10,
+          gnutls, libgpg, neofetch, libidn2, gettext, dropbear, libiosexec, libkernrw, lz4, xz, libmd, ncurses, nettle,
+          npth, p11-kit, openpam, readline, libtasn1, libunistring, xxhash, zlib-ng, zstd, odyssey-keyring, openssh,
+          openssl, packix-keyring, keyring, profile.d, sed, shell-cmds, shshd, snaputil, sudo, tar, uikittools, vi, zsh,
+          nano, jlutil, curl, cowsay, file, git, htop, make, p7zip, gawk, gettext-localizations, gzip, mpfr4, pam-modules,
+          pcre, system-cmds, unzip, zip, unrar, nickchan-keyring, nyuszika7h-keyring, amy-keyring, adv-cmds, bzip2, iokittools,
+          less, kext-tools, libarchive, network-cmds, plutil, text-cmds, vim, defaults, uuid, libksba, libtommath, libtomcrypt,
+          rtmpdump, libssh2, nghttp2, build-essential, llvm, jtool2
+        ]
     steps:
       - name: Download zstd
         id: download-zstd
