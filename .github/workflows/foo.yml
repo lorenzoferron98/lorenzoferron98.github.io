@@ -114,7 +114,7 @@ jobs:
       - name: "Check Procursus existence"
         uses: andstor/file-existence-action@v2
         with:
-          files: "GITHUB_WORKSPACE/Procursus/"
+          files: "$GITHUB_WORKSPACE/Procursus/"
 
       - name: Checkout Procursus
         if: steps.check_files.outputs.files_exists == 'false'
