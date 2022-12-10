@@ -18,9 +18,9 @@ env:
 jobs:
   package:
     runs-on: macos-latest
-    continue-on-error: true
     strategy:
       max-parallel: 1
+      fail-fast: false
       matrix:
         package: [ ldid, libplist ]
     steps:
