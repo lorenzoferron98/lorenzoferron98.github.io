@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         package: [
-          lsof, ldid, libplist, apt-package, apt, base, bash, bash-completion, brotli, cacerts, chariz-keyring, coreutils,
+          lsof, ldid, libplist, apt, apt, base, bash, bash-completion, brotli, cacerts, chariz-keyring, coreutils,
           darwintools, dash, debianutils, diffutils, diskdev-cmds, dpkg, essential, file-cmds, findutils, firmware-sbin,
           gnupg, grep, havoc-keyring, launchctl, libassuan, libxcrypt, dimentio, libedit, libffi, libgcrypt, libgmp10,
           gnutls, libgpg, neofetch, libidn2, gettext, dropbear, libiosexec, libkernrw, lz4, xz, libmd, ncurses, nettle,
