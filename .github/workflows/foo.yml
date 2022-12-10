@@ -101,21 +101,23 @@ jobs:
             docbook-xsl fakeroot findutils flex gawk git gnupg grep groff gzip ldid libtool make \
             ncurses-bin openssl patch pkg-config po4a python3 sed tar triehash xz-utils asciidoc zstd
 
-      - name: Create build dirs
-        run: |
-          mkdir -vp $GITHUB_WORKSPACE/{'Procursus','binpack','my_repo'}
 
       - name: Cache Procursus repo
         uses: actions/cache@v3
         id: cache
         with:
-          path: ./Procursus
-          key: procursus-${{ matrix.cfver }}-${{ matrix.package }}
+          path: Procursus
+          key: procursus-${{ inputs.cfVer }}-${{ matrix.package }}
           restore-keys: |
-            procursus-${{ matrix.cfver }}-
+            procursus-${{ inputs.cfVer }}-
+
+      - name: "Check Procursus existence"
+        uses: andstor/file-existence-action@v2
+        with:
+          files: "Procursus/"
 
       - name: Checkout Procursus
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.check_files.outputs.files_exists == 'true'
         uses: actions/checkout@v3
         with:
           repository: 'lorenzoferron98/Procursus'
