@@ -124,7 +124,6 @@ jobs:
           path: 'Procursus'
 
       - name: Build ${{ matrix.package }}
-        if: ${{ success() || failure() }}
         working-directory: Procursus
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ inputs.cfVer }} NO_PGP=1 gmake ${{ matrix.package }}-package
@@ -225,8 +224,34 @@ jobs:
       
       
 
+      - name: Checkout binpack
+        if: ${{ success() || failure() }}
+        uses: actions/checkout@v3
+        with:
+          repository: 'ProcursusTeam/binpack'
+          submodules: 'recursive'
+          path: 'binpack'
+
+
+
+      - name: Checkout my repo
+        if: ${{ success() || failure() }}
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.MY_PAT }}
+          path: 'my_repo'
+
+      - name: Config git
+        if: ${{ success() || failure() }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '30465144+github-actions[bot]@users.noreply.github.com'
+
+
+
       - name: Cleanup
-        working-directory: Procursus
+        if: ${{ success() || failure() }}
+        working-directory: my_repo
         run: |
           gh extension install actions/gh-actions-cache
           
