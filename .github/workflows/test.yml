@@ -1,4 +1,4 @@
-name: build-procursus-debs
+name: test
 on:
   workflow_dispatch:
 
