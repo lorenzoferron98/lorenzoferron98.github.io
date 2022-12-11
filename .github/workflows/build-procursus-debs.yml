@@ -771,7 +771,7 @@ jobs:
         id: cache
         with:
           path: Procursus
-          key: procursus-${{ inputs.cfVer }}-${{ github.job }}
+          key: procursus-${{ matrix.cfver }}-${{ github.job }}
 
 
   llvm:
@@ -864,9 +864,9 @@ jobs:
         id: cache
         with:
           path: Procursus
-          key: procursus-${{ inputs.cfVer }}-${{ github.job }}
+          key: procursus-${{ matrix.cfver }}-${{ github.job }}
           restore-keys: |
-            procursus-${{ inputs.cfVer }}-
+            procursus-${{ matrix.cfver }}-
 
       - name: Build llvm
         if: ${{ success() || failure() }}
@@ -965,9 +965,9 @@ jobs:
         id: cache
         with:
           path: Procursus
-          key: procursus-${{ inputs.cfVer }}-post-build
+          key: procursus-${{ matrix.cfver }}-post-build
           restore-keys: |
-            procursus-${{ inputs.cfVer }}-
+            procursus-${{ matrix.cfver }}-
 
       - name: Create build dirs
         run: |
