@@ -17,12 +17,14 @@ jobs:
           echo "Hello World!" > greetings.txt
       # Instead of running `actions/cache@v3` directly, check it out locally.
       - name: Checkout actions/cache@v3
+        if: ${{ success() || failure() }}
         uses: actions/checkout@v3
         with:
           repository: actions/cache
           ref: v3
           path: .tmp/actions/cache
       - name: Make actions/cache@v3 run always, not only when job succeeds
+        if: ${{ success() || failure() }}
         # Tweak `action.yml` of `actions/cache@v3` to remove its `post-if`
         # condition, making it default to `post-if: always()`.
         run: |
