@@ -11,10 +11,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - run: exit 1
-      - if: ${{ success() || failure() }}
-        run: |
-          mkdir -vp hello/
-          echo "Hello World!" > hello/greetings.txt
       # Instead of running `actions/cache@v3` directly, check it out locally.
       - name: Checkout actions/cache@v3
         if: ${{ success() || failure() }}
@@ -35,6 +31,10 @@ jobs:
         with:
           path: hello
           key: hello-${{ github.job }}
+      - if: ${{ success() || failure() }}
+        run: |
+          mkdir -vp hello/
+          echo "Hello World!" > hello/greetings.txt
 
   successful:
     needs: failed
