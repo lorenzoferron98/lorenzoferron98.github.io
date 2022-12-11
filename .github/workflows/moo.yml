@@ -35,7 +35,6 @@ jobs:
         with:
           path: hello
           key: hello-${{ github.job }}
-          always-save: true
 
   successful:
     needs: failed
