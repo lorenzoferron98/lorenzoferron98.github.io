@@ -9,25 +9,22 @@ defaults:
 jobs:
   failed:
     runs-on: macos-latest
-    if: ${{ success() || failure() }}
-    continue-on-error: true
     steps:
-      - if: ${{ success() || failure() }}
-        uses: actions/cache@v3
-        id: cache
-        with:
-          path: hello
-          key: hello-${{ github.job }}
       - run: exit 1
       - if: ${{ success() || failure() }}
         run: |
           mkdir -vp hello/
           echo "Hello World!" > greetings.txt
+      - if: ${{ success() || failure() }}
+        uses: martinheidegger/cache@always-save
+        id: cache
+        with:
+          path: hello
+          key: hello-${{ github.job }}
 
   successful:
     needs: failed
     runs-on: macos-latest
     if: ${{ success() || failure() }}
-    continue-on-error: true
     steps:
       - run: echo "Done!"
