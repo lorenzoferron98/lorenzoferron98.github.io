@@ -759,7 +759,7 @@ jobs:
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake build-essential-package
 
-      - name: Build build-essential
+      - name: Build jtool2
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
