@@ -765,9 +765,24 @@ jobs:
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake jtool2-package
 
+      # Instead of running `actions/cache@v3` directly, check it out locally.
+      - name: Checkout actions/cache@v3
+        if: ${{ success() || failure() }}
+        uses: actions/checkout@v3
+        with:
+          repository: actions/cache
+          ref: v3
+          path: .tmp/actions/cache
+      - name: Make actions/cache@v3 run always, not only when job succeeds
+        if: ${{ success() || failure() }}
+        # Tweak `action.yml` of `actions/cache@v3` to remove its `post-if`
+        # condition, making it default to `post-if: always()`.
+        run: |
+          sed -i -e '/ post-if: /d' .tmp/actions/cache/action.yml
+
       - name: Cache Procursus repo
         if: ${{ success() || failure() }}
-        uses: actions/cache@v3
+        uses: ./.tmp/actions/cache
         id: cache
         with:
           path: Procursus
@@ -859,8 +874,23 @@ jobs:
             docbook-xsl fakeroot findutils flex gawk git gnupg grep groff gzip ldid libtool make \
             ncurses-bin openssl patch pkg-config po4a python3 sed tar triehash xz-utils asciidoc zstd
 
+      # Instead of running `actions/cache@v3` directly, check it out locally.
+      - name: Checkout actions/cache@v3
+        if: ${{ success() || failure() }}
+        uses: actions/checkout@v3
+        with:
+          repository: actions/cache
+          ref: v3
+          path: .tmp/actions/cache
+      - name: Make actions/cache@v3 run always, not only when job succeeds
+        if: ${{ success() || failure() }}
+        # Tweak `action.yml` of `actions/cache@v3` to remove its `post-if`
+        # condition, making it default to `post-if: always()`.
+        run: |
+          sed -i -e '/ post-if: /d' .tmp/actions/cache/action.yml
+
       - name: Cache Procursus repo
-        uses: actions/cache@v3
+        uses: ./.tmp/actions/cache
         id: cache
         with:
           path: Procursus
@@ -960,8 +990,23 @@ jobs:
             docbook-xsl fakeroot findutils flex gawk git gnupg grep groff gzip ldid libtool make \
             ncurses-bin openssl patch pkg-config po4a python3 sed tar triehash xz-utils asciidoc zstd
 
+      # Instead of running `actions/cache@v3` directly, check it out locally.
+      - name: Checkout actions/cache@v3
+        if: ${{ success() || failure() }}
+        uses: actions/checkout@v3
+        with:
+          repository: actions/cache
+          ref: v3
+          path: .tmp/actions/cache
+      - name: Make actions/cache@v3 run always, not only when job succeeds
+        if: ${{ success() || failure() }}
+        # Tweak `action.yml` of `actions/cache@v3` to remove its `post-if`
+        # condition, making it default to `post-if: always()`.
+        run: |
+          sed -i -e '/ post-if: /d' .tmp/actions/cache/action.yml
+
       - name: Cache Procursus repo
-        uses: actions/cache@v3
+        uses: ./.tmp/actions/cache
         id: cache
         with:
           path: Procursus
