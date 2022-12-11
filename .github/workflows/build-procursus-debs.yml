@@ -8,7 +8,7 @@ defaults:
 
 env:
   MEMO_TARGET: iphoneos-arm64
-  CFVER: 1800
+  CFVER: 1800, 1900
 
 jobs:
   build:
@@ -779,7 +779,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        cfver: [ ${{ env.CFVER }} ]
+        cfver: [ $CFVER ]
     steps:
       - name: Download zstd
         id: download-zstd
@@ -879,7 +879,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        cfver: [ ${{ env.CFVER }} ]
+        cfver: [ $CFVER ]
     steps:
       - name: Download zstd
         id: download-zstd
