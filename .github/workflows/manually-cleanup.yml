@@ -1,4 +1,4 @@
-name: Manually cleanup
+name: manually-cleanup
 on:
   workflow_dispatch:
     inputs:
