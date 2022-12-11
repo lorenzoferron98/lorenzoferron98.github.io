@@ -11,17 +11,17 @@ jobs:
     runs-on: macos-latest
     continue-on-error: true
     steps:
-      - run: exit 1
-      - if: ${{ success() || failure() }}
-        run: |
-          mkdir -vp hello/
-          echo "Hello World!" > greetings.txt
       - if: ${{ success() || failure() }}
         uses: actions/cache@v3
         id: cache
         with:
           path: hello
           key: hello-${{ github.job }}
+      - run: exit 1
+      - if: ${{ success() || failure() }}
+        run: |
+          mkdir -vp hello/
+          echo "Hello World!" > greetings.txt
 
   successful:
     needs: failed
