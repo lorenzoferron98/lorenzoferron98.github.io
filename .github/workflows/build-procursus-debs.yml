@@ -8,7 +8,9 @@ defaults:
 
 env:
   MEMO_TARGET: iphoneos-arm64
-  CFVER: [1800, 1900]
+  CFVER:
+    - 1800
+    - 1900
 
 jobs:
   build:
