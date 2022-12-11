@@ -776,6 +776,7 @@ jobs:
 
   llvm:
     needs: build
+    if: ${{ success() || failure() }}
     runs-on: macos-latest
     strategy:
       matrix:
@@ -876,6 +877,7 @@ jobs:
 
   package:
     needs: llvm
+    if: ${{ success() || failure() }}
     runs-on: macos-latest
     strategy:
       matrix:
