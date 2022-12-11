@@ -41,4 +41,23 @@ jobs:
     runs-on: macos-latest
     if: ${{ success() || failure() }}
     steps:
-      - run: echo "Done!"
+      - name: Checkout actions/cache@v3
+        if: ${{ success() || failure() }}
+        uses: actions/checkout@v3
+        with:
+          repository: actions/cache
+          ref: v3
+          path: .tmp/actions/cache
+      - name: Make actions/cache@v3 run always, not only when job succeeds
+        if: ${{ success() || failure() }}
+        # Tweak `action.yml` of `actions/cache@v3` to remove its `post-if`
+        # condition, making it default to `post-if: always()`.
+        run: |
+          sed -i -e '/ post-if: /d' .tmp/actions/cache/action.yml
+      - if: ${{ success() || failure() }}
+        uses: ./.tmp/actions/cache
+        id: cache
+        with:
+          path: hello
+          key: hello-failed
+      - run: cat ./hello/greetings.txt
