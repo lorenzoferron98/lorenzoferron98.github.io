@@ -1,0 +1,21 @@
+name: build-procursus-debs
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  job1:
+    runs-on: macos-latest
+    steps:
+      - run: exit 1
+      - if: ${{ success() || failure() }}
+        run: echo "Hello World from job1!"
+  job2:
+    needs: job1
+    if: ${{ success() || failure() }}
+    runs-on: macos-latest
+    steps:
+      - run: echo "Hello World from job2!"

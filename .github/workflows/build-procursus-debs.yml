@@ -766,6 +766,7 @@ jobs:
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake jtool2-package
 
       - name: Cache Procursus repo
+        if: ${{ success() || failure() }}
         uses: actions/cache@v3
         id: cache
         with:
