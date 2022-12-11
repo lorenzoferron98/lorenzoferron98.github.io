@@ -6,14 +6,16 @@ defaults:
   run:
     shell: bash
 
+env:
+  MEMO_TARGET: iphoneos-arm64
+  CFVER: [ 1800 ]
+
 jobs:
-  bootstrap-repo:
+  build:
     runs-on: macos-latest
-    env:
-      MEMO_TARGET: iphoneos-arm64
     strategy:
       matrix:
-        cfver: [1800]
+        cfver: $CFVER
     steps:
       - name: Download zstd
         id: download-zstd
@@ -91,10 +93,6 @@ jobs:
           sudo apt-get install -y autoconf automake autopoint bash bison cmake curl docbook-xml \
             docbook-xsl fakeroot findutils flex gawk git gnupg grep groff gzip ldid libtool make \
             ncurses-bin openssl patch pkg-config po4a python3 sed tar triehash xz-utils asciidoc zstd
-
-      - name: Create build dirs
-        run: |
-          mkdir -vp $GITHUB_WORKSPACE/{'Procursus','binpack','my_repo'}
 
       - name: Checkout Procursus
         uses: actions/checkout@v3
@@ -762,17 +760,222 @@ jobs:
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake build-essential-package
 
+      - name: Build build-essential
+        if: ${{ success() || failure() }}
+        working-directory: ./Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake jtool2-package
+
+      - name: Cache Procursus repo
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: Procursus
+          key: procursus-${{ inputs.cfVer }}-${{ github.job }}
+
+
+  llvm:
+    needs: build
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        cfver: $CFVER
+    steps:
+      - name: Download zstd
+        id: download-zstd
+        run: |
+          dir=$(mktemp -d /tmp/XXXX) && cd "${dir}"
+          curl -LO https://cameronkatri.com/zstd
+          chmod +x ./zstd
+          echo "DIR=${dir}" >> $GITHUB_OUTPUT
+
+      - name: Boostrap Procursus
+        run: |
+          dir="${{ steps.download-zstd.outputs.DIR }}" && cd "${dir}"
+          curl -L https://apt.procurs.us/bootstrap_darwin-amd64.tar.zst -o bootstrap.tar.zst
+          ./zstd -dk bootstrap.tar.zst
+          sudo tar -xvpkf ./bootstrap.tar -C / || :
+          cd -
+          rm -vrf "${dir}"
+
+      - name: Add Procusus to PATH
+        run: |
+          PROCURSUS_PATHS=("/opt/procursus/games" "/opt/procursus/sbin" "/opt/procursus/bin" "/opt/procursus/local/sbin" "/opt/procursus/local/bin")
+          for i in "${PROCURSUS_PATHS[@]}";
+          do
+            case ":$PATH:" in
+              *:$i:*) echo "$i is already in PATH, not adding";;
+              *) echo "$i" >> $GITHUB_PATH;;
+            esac
+          done
+          
+          case ":$CPATH:" in
+            *:/opt/procursus/include:*) echo "/opt/procursus/include already in CPATH, not adding";;
+            *) echo "CPATH=$CPATH:/opt/procursus/include" >> $GITHUB_ENV;;
+          esac
+          
+          case ":$LIBRARY_PATH:" in
+            *:/opt/procursus/lib:*) echo "/opt/procursus/lib already in LIBRARY_PATH, not adding";;
+            *) echo "LIBRARY_PATH=$LIBRARY_PATH:/opt/procursus/lib" >> $GITHUB_ENV;;
+          esac
+
+      - name: Create unprivileged user for APT method
+        run: |
+          # Taken from Procursus' apt.postinst
+          set -e
+          getHiddenUserUid()
+          {
+            local __UIDS=$(dscl . -list /Users UniqueID | awk '{print $2}' | sort -ugr)
+            local __NewUID
+            for __NewUID in $__UIDS
+            do
+                if [[ $__NewUID -lt 499 ]] ; then
+                    break;
+                fi
+            done
+            echo $((__NewUID+1))
+          }
+          
+          if ! id _apt &>/dev/null; then
+            # add unprivileged user for the apt methods
+            sudo dscl . -create /Users/_apt UserShell /usr/bin/false
+            sudo dscl . -create /Users/_apt NSFHomeDirectory /var/empty
+            sudo dscl . -create /Users/_apt PrimaryGroupID -1
+            sudo dscl . -create /Users/_apt UniqueID $(getHiddenUserUid)
+            sudo dscl . -create /Users/_apt RealName "APT Sandbox User"
+          else
+            echo "APT Sandbox User already exists, not creating"
+          fi
+
+      - name: Update bootstrap
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y --allow-downgrades dist-upgrade || :
+
+      - name: Install necessary packages on macOS
+        run: |
+          sudo apt-get install -y autoconf automake autopoint bash bison cmake curl docbook-xml \
+            docbook-xsl fakeroot findutils flex gawk git gnupg grep groff gzip ldid libtool make \
+            ncurses-bin openssl patch pkg-config po4a python3 sed tar triehash xz-utils asciidoc zstd
+
+      - name: Cache Procursus repo
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: Procursus
+          key: procursus-${{ inputs.cfVer }}-${{ github.job }}
+          restore-keys: |
+            procursus-${{ inputs.cfVer }}-
+
       - name: Build llvm
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake llvm-package
 
+
+  package:
+    needs: llvm
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        cfver: $CFVER
+    steps:
+      - name: Download zstd
+        id: download-zstd
+        run: |
+          dir=$(mktemp -d /tmp/XXXX) && cd "${dir}"
+          curl -LO https://cameronkatri.com/zstd
+          chmod +x ./zstd
+          echo "DIR=${dir}" >> $GITHUB_OUTPUT
+
+      - name: Boostrap Procursus
+        run: |
+          dir="${{ steps.download-zstd.outputs.DIR }}" && cd "${dir}"
+          curl -L https://apt.procurs.us/bootstrap_darwin-amd64.tar.zst -o bootstrap.tar.zst
+          ./zstd -dk bootstrap.tar.zst
+          sudo tar -xvpkf ./bootstrap.tar -C / || :
+          cd -
+          rm -vrf "${dir}"
+
+      - name: Add Procusus to PATH
+        run: |
+          PROCURSUS_PATHS=("/opt/procursus/games" "/opt/procursus/sbin" "/opt/procursus/bin" "/opt/procursus/local/sbin" "/opt/procursus/local/bin")
+          for i in "${PROCURSUS_PATHS[@]}";
+          do
+            case ":$PATH:" in
+              *:$i:*) echo "$i is already in PATH, not adding";;
+              *) echo "$i" >> $GITHUB_PATH;;
+            esac
+          done
+
+          case ":$CPATH:" in
+            *:/opt/procursus/include:*) echo "/opt/procursus/include already in CPATH, not adding";;
+            *) echo "CPATH=$CPATH:/opt/procursus/include" >> $GITHUB_ENV;;
+          esac
+
+          case ":$LIBRARY_PATH:" in
+            *:/opt/procursus/lib:*) echo "/opt/procursus/lib already in LIBRARY_PATH, not adding";;
+            *) echo "LIBRARY_PATH=$LIBRARY_PATH:/opt/procursus/lib" >> $GITHUB_ENV;;
+          esac
+
+      - name: Create unprivileged user for APT method
+        run: |
+          # Taken from Procursus' apt.postinst
+          set -e
+          getHiddenUserUid()
+          {
+            local __UIDS=$(dscl . -list /Users UniqueID | awk '{print $2}' | sort -ugr)
+            local __NewUID
+            for __NewUID in $__UIDS
+            do
+                if [[ $__NewUID -lt 499 ]] ; then
+                    break;
+                fi
+            done
+            echo $((__NewUID+1))
+          }
+
+          if ! id _apt &>/dev/null; then
+            # add unprivileged user for the apt methods
+            sudo dscl . -create /Users/_apt UserShell /usr/bin/false
+            sudo dscl . -create /Users/_apt NSFHomeDirectory /var/empty
+            sudo dscl . -create /Users/_apt PrimaryGroupID -1
+            sudo dscl . -create /Users/_apt UniqueID $(getHiddenUserUid)
+            sudo dscl . -create /Users/_apt RealName "APT Sandbox User"
+          else
+            echo "APT Sandbox User already exists, not creating"
+          fi
+
+      - name: Update bootstrap
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y --allow-downgrades dist-upgrade || :
+
+      - name: Install necessary packages on macOS
+        run: |
+          sudo apt-get install -y autoconf automake autopoint bash bison cmake curl docbook-xml \
+            docbook-xsl fakeroot findutils flex gawk git gnupg grep groff gzip ldid libtool make \
+            ncurses-bin openssl patch pkg-config po4a python3 sed tar triehash xz-utils asciidoc zstd
+
+      - name: Cache Procursus repo
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: Procursus
+          key: procursus-${{ inputs.cfVer }}-post-build
+          restore-keys: |
+            procursus-${{ inputs.cfVer }}-
+
+      - name: Create build dirs
+        run: |
+          mkdir -vp $GITHUB_WORKSPACE/{'binpack','my_repo'}
+
       - name: Package bootstrap
         if: ${{ success() || failure() }}
-        working-directory: ./Procursus
+        working-directory: Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake bootstrap
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake bootstrap      
 
       - name: Checkout binpack
         if: ${{ success() || failure() }}
@@ -784,7 +987,7 @@ jobs:
 
       - name: Package binpack
         if: ${{ success() || failure() }}
-        working-directory: ./binpack
+        working-directory: binpack
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} MEMO_NO_IOSEXEC=1 NO_PGP=1 BINPACK_THICK=1 gmake binpack
 
@@ -803,7 +1006,7 @@ jobs:
 
       - name: Commit bootstrap
         if: ${{ success() || failure() }}
-        working-directory: ./my_repo
+        working-directory: my_repo
         run: |
           mkdir -vp /tmp/${{ matrix.cfver }}/bootstrap && unzstd -d -vvvv ../Procursus/build_strap/$MEMO_TARGET/${{ matrix.cfver }}/bootstrap.tar.zst -o /tmp/${{ matrix.cfver }}/bootstrap.tar
           tar -xvf /tmp/${{ matrix.cfver }}/bootstrap.tar -C /tmp/${{ matrix.cfver }}/bootstrap
@@ -814,7 +1017,7 @@ jobs:
 
       - name: Commit binpack
         if: ${{ success() || failure() }}
-        working-directory: ./my_repo
+        working-directory: my_repo
         run: |
           mv -v ../binpack/build_strap/$MEMO_TARGET/${{ matrix.cfver }}/binpack-thick.tar ./repos/${{ matrix.cfver }}/
           mv -v ../binpack/build_strap/$MEMO_TARGET/${{ matrix.cfver }}/binpack-thick.tc ./repos/${{ matrix.cfver }}/
@@ -823,7 +1026,7 @@ jobs:
 
       - name: Commit packages
         if: ${{ success() || failure() }}
-        working-directory: ./my_repo
+        working-directory: my_repo
         run: |
           rm -vrf ../Procursus/build_dist/$MEMO_TARGET/${{ matrix.cfver }}/work/
           rsync --progress -r -u -v ../Procursus/build_dist/$MEMO_TARGET/${{ matrix.cfver }}/* ./repos/${{ matrix.cfver }}/debs/
@@ -832,6 +1035,6 @@ jobs:
 
       - name: Push bootstrap, binpack and packages
         if: ${{ success() || failure() }}
-        working-directory: ./my_repo
+        working-directory: my_repo
         run: |
           git push
