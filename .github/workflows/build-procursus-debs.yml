@@ -15,7 +15,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        cfver: $CFVER
+        cfver: ${{ env.CFVER }}
     steps:
       - name: Download zstd
         id: download-zstd
@@ -779,7 +779,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        cfver: $CFVER
+        cfver: ${{ env.CFVER }}
     steps:
       - name: Download zstd
         id: download-zstd
@@ -879,7 +879,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        cfver: $CFVER
+        cfver: ${{ env.CFVER }}
     steps:
       - name: Download zstd
         id: download-zstd
