@@ -9,6 +9,7 @@ defaults:
 jobs:
   failed:
     runs-on: macos-latest
+    if: ${{ success() || failure() }}
     continue-on-error: true
     steps:
       - if: ${{ success() || failure() }}
