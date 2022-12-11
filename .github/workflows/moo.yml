@@ -60,4 +60,4 @@ jobs:
         with:
           path: hello
           key: hello-failed
-      - run: cat ./hello/greetings.txt
+      - run: pwd && ls -alFh
