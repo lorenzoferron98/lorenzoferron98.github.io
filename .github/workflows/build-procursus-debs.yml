@@ -99,12 +99,6 @@ jobs:
           repository: 'lorenzoferron98/Procursus'
           path: 'Procursus'
 
-      - name: Build lsof
-        if: ${{ success() || failure() }}
-        working-directory: ./Procursus
-        run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake lsof-package
-
       - name: Build ldid
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
@@ -687,6 +681,12 @@ jobs:
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake network-cmds-package
 
+      - name: Build lsof
+        if: ${{ success() || failure() }}
+        working-directory: ./Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake lsof-package
+
       - name: Build plutil
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
@@ -764,6 +764,12 @@ jobs:
         working-directory: ./Procursus
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake jtool2-package
+
+      - name: Build xar
+        if: ${{ success() || failure() }}
+        working-directory: ./Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake xar-package
 
       # Instead of running `actions/cache@v3` directly, check it out locally.
       - name: Checkout actions/cache@v3
