@@ -4445,6 +4445,61 @@ SHA512: 4b2ed63bd2963d3a0fcfaf5b0e0a1fd5ff4c9b39f4585405b7e2648b5f236f2ce353479f
 Description: tool to make (or reverse) a hex dump
  xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form.
 
+Package: libxar-dev
+Architecture: iphoneos-arm
+Version: 1.8.0.487.100.1
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 320
+Depends: libxar1 (>= 1.8.0.487.100.1), libssl-dev
+Conflicts: xar (<< 1.8.0.487.100.1)
+Replaces: xar (<< 1.8.0.487.100.1)
+Filename: ./debs/xar/libxar-dev_1.8.0.487.100.1_iphoneos-arm.deb
+Size: 128032
+MD5sum: e68fc9766aeb0c2f0e7666dbe23d1f7f
+SHA1: b386426d946026a393d80b3d304b9ce43940f4c7
+SHA256: 6528f0877f541e8c49fc743325d135b30118f52ebff18f3e0fc942a804b35475
+SHA512: 15c463ea2e184a8b185986a6ca0a1ae06698e46181fea9704463f46f44b56f3c09b6f1703bec2efbd4cf1f1feba41872d99b2fb13be025aafd8412542dbb627e
+Homepage: https://mackyle.github.io/xar/
+Description: eXtensible ARchive format - Development files
+
+Package: libxar1
+Architecture: iphoneos-arm
+Version: 1.8.0.487.100.1
+Priority: optional
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 144
+Depends: libiosexec1 (>= 1.2.2), libssl3
+Conflicts: xar (<< 1.8.0.487.100.1)
+Replaces: xar (<< 1.8.0.487.100.1)
+Filename: ./debs/xar/libxar1_1.8.0.487.100.1_iphoneos-arm.deb
+Size: 36154
+MD5sum: 9205b4c7e73fb4589baf1c19026c2d38
+SHA1: d1a5a52a3a518166f6fae46a20ebb9a925151055
+SHA256: 775799913a4669bf1fed5966b763349a6baba836aff4a70c00950712af4b8d76
+SHA512: bb4029f0666c1ccf72f0c7d639a064f563c4be7ae0369dc4035d9fa291ff948ed4a29006fdd79912afea14058e6f235594fbdd5ec99ab440ebf78442858bf6c8
+Homepage: https://mackyle.github.io/xar/
+Description: eXtensible ARchive format - dynamic library
+
+Package: xar
+Architecture: iphoneos-arm
+Version: 1.8.0.487.100.1
+Priority: optional
+Section: Archiving
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 68
+Depends: libiosexec1 (>= 1.2.2), libxar1 (>= 1.8.0.487.100.1), libssl3
+Filename: ./debs/xar/xar_1.8.0.487.100.1_iphoneos-arm.deb
+Size: 14342
+MD5sum: 00351642b99dd92ffe9e3b19bce4c8e6
+SHA1: 17d87b1b9942983c0dace9b0ee8a65b547008375
+SHA256: 607c53704d51e12e1d10443d358c4dd7762860c0d73ba29c88049ec95a762b4f
+SHA512: ebadccbd25c37a6bdc1a4dadb4b72896b84090724c6e78fd1055e4e2f13dac3c6cf6a345a6d3694c5200d64f0f4b57c9ecd0479d3b84eb8ad07c7ebbc9efc054
+Homepage: https://mackyle.github.io/xar/
+Description: eXtensible ARchive format
+
 Package: libxxhash-dev
 Architecture: iphoneos-arm
 Version: 0.8.1

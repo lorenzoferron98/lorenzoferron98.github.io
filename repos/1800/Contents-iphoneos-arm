@@ -811,6 +811,7 @@ usr/bin/whereis						    shell-cmds
 usr/bin/which						    shell-cmds
 usr/bin/who						    coreutils
 usr/bin/whoami						    coreutils
+usr/bin/xar						    xar
 usr/bin/xargs						    findutils
 usr/bin/xattr						    file-cmds
 usr/bin/xgettext					    gettext
@@ -1774,6 +1775,9 @@ usr/lib/libunrar.dylib					    libunrar-dev
 usr/lib/libuuid.16.dylib				    libuuid16
 usr/lib/libuuid.a					    libuuid-dev
 usr/lib/libuuid.dylib					    libuuid-dev
+usr/lib/libxar.1.dylib					    libxar1
+usr/lib/libxar.a					    libxar-dev
+usr/lib/libxar.dylib					    libxar-dev
 usr/lib/libxxhash.0.8.1.dylib				    libxxhash0
 usr/lib/libxxhash.0.dylib				    libxxhash0
 usr/lib/libxxhash.a					    libxxhash-dev
@@ -9825,6 +9829,10 @@ usr/share/doc/libuuid16/NEWS.zst			    libuuid16
 usr/share/doc/libuuid16/README.zst			    libuuid16
 usr/share/doc/libuuid16/THANKS.zst			    libuuid16
 usr/share/doc/libuuid16/TODO.zst			    libuuid16
+usr/share/doc/libxar-dev/LICENSE			    libxar-dev
+usr/share/doc/libxar-dev/TODO.zst			    libxar-dev
+usr/share/doc/libxar1/LICENSE				    libxar1
+usr/share/doc/libxar1/TODO.zst				    libxar1
 usr/share/doc/libxxhash-dev/LICENSE			    libxxhash-dev
 usr/share/doc/libxxhash0/LICENSE			    libxxhash0
 usr/share/doc/libzstd-dev/COPYING			    libzstd-dev
@@ -9931,6 +9939,8 @@ usr/share/doc/vi/LICENSE				    vi
 usr/share/doc/vi/README.zst				    vi
 usr/share/doc/vi/TODO.zst				    vi
 usr/share/doc/vim/LICENSE				    vim
+usr/share/doc/xar/LICENSE				    xar
+usr/share/doc/xar/TODO.zst				    xar
 usr/share/doc/xxd/LICENSE				    xxd
 usr/share/doc/xxhash/LICENSE				    xxhash
 usr/share/doc/xz-utils/AUTHORS				    xz-utils
@@ -12810,6 +12820,7 @@ usr/share/man/man1/which.1.zst				    shell-cmds
 usr/share/man/man1/who.1.zst				    coreutils
 usr/share/man/man1/whoami.1.zst				    coreutils
 usr/share/man/man1/x509.1ssl.zst			    libssl-doc
+usr/share/man/man1/xar.1.zst				    xar
 usr/share/man/man1/xargs.1.zst				    findutils
 usr/share/man/man1/xattr.1.zst				    file-cmds
 usr/share/man/man1/xgettext.1.zst			    gettext
