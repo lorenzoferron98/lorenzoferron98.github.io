@@ -229,6 +229,22 @@ SHA512: 80a5cfad00638fc95678d6f2c39e3def9398fd74a8ac68531c4646b2fe2593e62c5d8094
 Homepage: https://www.brotli.org/
 Description: Shared libraries for the Brotli compression format
 
+Package: build-essential
+Architecture: iphoneos-arm
+Version: 16.0
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 57724
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/build-essential/build-essential_16.0_iphoneos-arm.deb
+Size: 11238324
+MD5sum: 2865fa8c669146a320ae8c4a60722007
+SHA1: 5587e75b6d22e0b1d459da29094d07325a7d9606
+SHA256: bb5724d213e2211ad61d6d624b343b2437da26bb8cf92d1412b3eeabcbaaea1e
+SHA512: dd2e1ab70df67ac99201d935d253652178c56021812164f9a3b9e95309edf70f68d13361f9733753fc4e55584969f70c3f1799fa793302e23b5d404645555c19
+Description: Contains an SDK for your platform.
+
 Package: bzip2
 Architecture: iphoneos-arm
 Version: 1.0.8
@@ -260,6 +276,25 @@ MD5sum: a2cd6b7d0ad1061281271c7524cab5c7
 SHA1: 78c8b248c573af9fa4fc6dd6decc136c1dd2ba29
 SHA256: f9059ee1c51c730da277c1b44a151b3014df6687df9cca0c2ac28b8106ff5f65
 SHA512: 3fcd6482aedbd7ca3022ea53bc6bde420dc4554053e696e7a49b6deb4fa18541f835706d4c75f4f479c2ff706038fbad6b3599ea7429860aa75883d9f1b97fd1
+Description: Common CA certificates
+ Contains the certificate authorities shipped with Mozilla's browser to allow SSL-based applications to check for the authenticity of SSL connections.
+ .
+ Please note that Procursus can neither confirm nor deny whether the certificate authorities whose certificates are included in this package have in any way been audited for trustworthiness or RFC 3647 compliance. Full responsibility to assess them belongs to the local system administrator.
+
+Package: ca-certificates
+Architecture: all
+Version: 20221212
+Multi-Arch: foreign
+Priority: optional
+Section: Utilities
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 224
+Filename: ./debs/cacerts/ca-certificates_20221212_all.deb
+Size: 122480
+MD5sum: b7190016b79e508f653b9cd663817862
+SHA1: f2924004fbac71b5d6c51aa60a4705633f32d24b
+SHA256: c66436c4a935ed4baa02f8e9a5aac11ffb91442dd90dc651799db4aa0a33563d
+SHA512: 92b2a90a1ffef7ad03e16181d621622a411c655c9ca46979d20bbec41ea3ec83535e093d3eaf783b10b5dce94ce5fb3a4358b5237c8cf411300032c1d174c15c
 Description: Common CA certificates
  Contains the certificate authorities shipped with Mozilla's browser to allow SSL-based applications to check for the authenticity of SSL connections.
  .
@@ -1664,6 +1699,24 @@ SHA256: 8db29b0ec89cec7cf314b34882e02998129fe41d498f3d624a665e0be4bb30e7
 SHA512: 4ef183ac3963bd102c1eaf8811d75a2abb4fa7cfbd4c80179a6eef5465a060afb774209925229b82b74825b17977e638b705009c8414a6538b23bc43ed9a1bb7
 Homepage: http://newosxbook.com/tools/jlutil.html
 Description: an alternate, cross-platform format for representing property lists
+Author: Jonathan Levin
+
+Package: jtool2
+Architecture: iphoneos-arm
+Version: 2020.12.21
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 1072
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/jtool2/jtool2_2020.12.21_iphoneos-arm.deb
+Size: 246078
+MD5sum: ac82fd0e016ef6c5b982920eece57721
+SHA1: 65ce5dbc12ad86547b70d3806e45062df512c3a6
+SHA256: 79860887729218b25117e2190eb860be085c865b60a3d5e6e3ac16416bd6e107
+SHA512: 718e80f48ef7044dd22a5441c849a065e18140f5b5ccea7719f55518dd98b497a95ef8fa56cf01ccb5f32bdcb25466ed727263a6f614d1798b91de697b881811
+Homepage: http://newosxbook.com/tools/jtool.html
+Description: otool, but better (non-opensource)
 Author: Jonathan Levin
 
 Package: kext-tools
