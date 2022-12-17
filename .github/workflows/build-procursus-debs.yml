@@ -771,12 +771,6 @@ jobs:
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake xar-package
 
-      - name: Build ncurses-term
-        if: ${{ success() || failure() }}
-        working-directory: ./Procursus
-        run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake ncurses-term-package
-
       - name: Build berkeleydb
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
