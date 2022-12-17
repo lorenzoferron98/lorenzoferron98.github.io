@@ -788,6 +788,12 @@ jobs:
         working-directory: ./Procursus
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libtool-package
+          
+      - name: Build libusb
+        if: ${{ success() || failure() }}
+        working-directory: ./Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libusb-package          
 
       # Instead of running `actions/cache@v3` directly, check it out locally.
       - name: Checkout actions/cache@v3
