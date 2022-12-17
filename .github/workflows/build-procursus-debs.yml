@@ -795,6 +795,18 @@ jobs:
         run: |
           MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libusb-package          
 
+      - name: Build libc-ares
+        if: ${{ success() || failure() }}
+        working-directory: ./Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libc-ares-package
+          
+      - name: Build libev
+        if: ${{ success() || failure() }}
+        working-directory: ./Procursus
+        run: |
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libev-package  
+
       # Instead of running `actions/cache@v3` directly, check it out locally.
       - name: Checkout actions/cache@v3
         if: ${{ success() || failure() }}
