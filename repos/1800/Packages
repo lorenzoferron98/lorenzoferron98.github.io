@@ -178,6 +178,158 @@ SHA512: aae728064a06e0be0df45a35c3b25218fa9050bada16cccf6318c129e104346336118413
 Homepage: http://www.gnu.org/software/bash/
 Description: the best shell ever written by Brian Fox
 
+Package: db18.1-util
+Architecture: iphoneos-arm
+Version: 18.1.40-1
+Priority: standard
+Section: Utilities
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 832
+Depends: libiosexec1 (>= 1.2.2), libssl3, libdb18.1
+Filename: ./debs/berkeleydb/db18.1-util_18.1.40-1_iphoneos-arm.deb
+Size: 58722
+MD5sum: 46cac2e9b8dbd79a903e4e2c133d54b0
+SHA1: 6d10bd15aba6787e053d27dabbc1be4e58d3cc2f
+SHA256: 45cc90354f755bd8c725693056f7eeecea607893f3de61ee21bf7eac23ec2977
+SHA512: 3eee45df748d5b2a6252fd46efbee2d14cc2dfbd8ff88c07efc74945e57f773af55ea1575f6d47d56b0eefeea5560f0c6c23fff1b631ba6db9d6dd9a940a4073
+Homepage: http://www.oracle.com/technology/products/berkeley-db/index.html
+Description: Berkeley v18.1 Database Utilities
+ This package provides different tools for manipulating databases
+ in the Berkeley v18.1 database format, and includes:
+  - db_archive: write the pathnames of the log files no longer in use.
+  - db_checkpoint: daemon process to monitor the database log and
+    checkpoint it periodically.
+  - db_deadlock: traverse the database environment lock region and
+    abort lock requests when a deadlock is detected.
+  - db_load: loads (and creates) a database from standard input.
+  - db_dump: read a database file and write it in a format understood
+    by db4.{2..8}_load.
+  - db_printlog: dump log files in human readable format.
+  - db_stat: display statistics for Berkeley DB environments.
+  - db_upgrade: upgrades the version of files and the databases they
+    contain.
+  - db_verify: check the structure of files and their databases.
+
+Package: libdb18.1++-dev
+Architecture: iphoneos-arm
+Version: 18.1.40-1
+Priority: standard
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 7784
+Depends: libdb18.1++ (>= 18.1.40-1)
+Filename: ./debs/berkeleydb/libdb18.1++-dev_18.1.40-1_iphoneos-arm.deb
+Size: 3622422
+MD5sum: c30dc6900ad96da240051c91222a1378
+SHA1: 56d10b45ed190d666090029095509c1ebcd90c95
+SHA256: ed63321fa9c8bd5b95f4f4a260f509e94e3604ecdaf21adcd9ce4e1fa9607bcc
+SHA512: af7129f31988743c6351f6ba94995bb433e2d559a9ac261ce140b877775c09b3664f4cf4302b3b153c8e87cce7b34c273b7e427c9fc53ba5ab95425eafc8e2f9
+Description: Berkeley v5.3 Database Libraries for C++ [development]
+ This is the development package which contains headers and static
+ libraries for the Berkeley v5.3 database library.  This is only for
+ programs which will use the C++ interface.
+
+Package: libdb18.1++
+Architecture: iphoneos-arm
+Version: 18.1.40-1
+Priority: standard
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 1660
+Depends: libiosexec1 (>= 1.2.2), libssl3
+Conflicts: berkeleydb (<< 18.1.40-1)
+Replaces: berkeleydb (<< 18.1.40-1)
+Filename: ./debs/berkeleydb/libdb18.1++_18.1.40-1_iphoneos-arm.deb
+Size: 658356
+MD5sum: 1ae4e4f365ef11e5f4fac3d7196096ca
+SHA1: cb34bea38fa280a44b50b75fd60c47275a1149db
+SHA256: 05275b38a12d469f2ad4ce7d41f0859fb62dbb7377ac8b1b45a68be4f67785c5
+SHA512: c82324c6948f51f97eb9b59b1f3ac695980046b8ce66b651131ea5b9c6c7a59e69cf79f6ccf93868c57e27145ee3b7bb96b77497d79f1ac688c1d8ebbfcf6e35
+Homepage: http://www.oracle.com/technology/products/berkeley-db/index.html
+Description: Berkeley v5.3 Database Libraries for C++ [runtime]
+ This is the runtime package for programs that use the Berkeley v5.3
+ database library.  This is only for programs which use the C++ interface.
+
+Package: libdb18.1-dev
+Architecture: iphoneos-arm
+Version: 18.1.40-1
+Priority: standard
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 7388
+Depends: libdb18.1 (>= 18.1.40-1)
+Filename: ./debs/berkeleydb/libdb18.1-dev_18.1.40-1_iphoneos-arm.deb
+Size: 3486636
+MD5sum: 5ea6e5499fa742d803a9187268e021cc
+SHA1: 3e520578b42707b248ab733292b6757a6596860e
+SHA256: c2ce93b9798ca0bf3bf83a46ed102e2a506bc3d2398227553eeff86c56fb12e3
+SHA512: 2fee73e106c16318fd0aa0423ab39011c9d9be26bd36fbf20818aca12e2d6af407f404ec60f0ec452aab68cda988731b4662059d4f72793928729a57a41fe646
+Homepage: http://www.oracle.com/technology/products/berkeley-db/index.html
+Description: Berkeley v18.1 Database Libraries [development]
+ This is the development package which contains headers and static
+ libraries for the Berkeley v18.1 database library.
+
+Package: libdb18.1-stl-dev
+Architecture: iphoneos-arm
+Version: 18.1.40-1
+Priority: standard
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 8372
+Depends: libdb18.1-stl (>= 18.1.40-1)
+Filename: ./debs/berkeleydb/libdb18.1-stl-dev_18.1.40-1_iphoneos-arm.deb
+Size: 3759786
+MD5sum: 335b206f4305c27bff4182e05f728229
+SHA1: e3a004e7360f47206e94705b60cbefeb0a33d5d2
+SHA256: fc932c996320d3017bd481090effa5b405827177c833922168cf3f64fc8083b1
+SHA512: 20b8ab943bd53253fd603ee54fe094fe3761bd67f3b7da55f9467a69a565a2670e2a5c8943c10afdbcbb84eea9e28787f4e82d4326e72247413b9ffc84725039
+Description: Berkeley v5.3 Database Libraries [STL development]
+ This is the development package which contains headers and static
+ libraries for the Berkeley v5.3 database library.
+
+Package: libdb18.1-stl
+Architecture: iphoneos-arm
+Version: 18.1.40-1
+Priority: standard
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 1720
+Depends: libiosexec1 (>= 1.2.2), libssl3
+Conflicts: berkeleydb (<< 18.1.40-1)
+Replaces: berkeleydb (<< 18.1.40-1)
+Filename: ./debs/berkeleydb/libdb18.1-stl_18.1.40-1_iphoneos-arm.deb
+Size: 673594
+MD5sum: 4ccc2a8578095b0655a1bd83e9fe9267
+SHA1: 8e666949d39b6c3a16689c746a77f27968bd4a7a
+SHA256: 142c4f9db5f67df4b1e943a3a09bf7507b644af916d81529957412023adaab57
+SHA512: f599ef16f74c31fa7a2d89762ef9d3f368be9a54d239c105a09a3785f15b6aa8a04a7d5c1c90412851012ada71ee00293a4796ce904ebe0c54f7cdcc03d8f08d
+Homepage: http://www.oracle.com/technology/products/berkeley-db/index.html
+Description: Berkeley v5.3 Database Libraries [STL runtime]
+ This is the runtime package for programs that use the v5.3 Berkeley
+ database STL library.
+
+Package: libdb18.1
+Architecture: iphoneos-arm
+Version: 18.1.40-1
+Priority: standard
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 1540
+Provides: berkeleydb (= 18.1.40-1)
+Depends: libiosexec1 (>= 1.2.2), libssl3
+Conflicts: berkeleydb
+Replaces: berkeleydb
+Filename: ./debs/berkeleydb/libdb18.1_18.1.40-1_iphoneos-arm.deb
+Size: 627162
+MD5sum: 091c6a67b63ee85b6ef22b3418086a83
+SHA1: 87f2a81d27413ba40bf0e7c4f7d6ead13a9291c6
+SHA256: 9775742d3f4c4d57fdb373dc27a1c70e71bb63d585fbc93db6a6c491eed2ae19
+SHA512: 090494acfe9082b90edf405a365122fff435e6b1c74bcacfabb2edc754a14ada4600cf27772639558d1141d0e2cb5c6a74a51036840dc8e88c6397048ac890ca
+Homepage: http://www.oracle.com/technology/products/berkeley-db/index.html
+Description: Berkeley v18.1 Database Libraries [runtime]
+ This is the runtime package for programs that use the v18.1 Berkeley
+ database library.
+
 Package: brotli
 Architecture: iphoneos-arm
 Version: 1.0.9
@@ -295,6 +447,25 @@ MD5sum: b7190016b79e508f653b9cd663817862
 SHA1: f2924004fbac71b5d6c51aa60a4705633f32d24b
 SHA256: c66436c4a935ed4baa02f8e9a5aac11ffb91442dd90dc651799db4aa0a33563d
 SHA512: 92b2a90a1ffef7ad03e16181d621622a411c655c9ca46979d20bbec41ea3ec83535e093d3eaf783b10b5dce94ce5fb3a4358b5237c8cf411300032c1d174c15c
+Description: Common CA certificates
+ Contains the certificate authorities shipped with Mozilla's browser to allow SSL-based applications to check for the authenticity of SSL connections.
+ .
+ Please note that Procursus can neither confirm nor deny whether the certificate authorities whose certificates are included in this package have in any way been audited for trustworthiness or RFC 3647 compliance. Full responsibility to assess them belongs to the local system administrator.
+
+Package: ca-certificates
+Architecture: all
+Version: 20221218
+Multi-Arch: foreign
+Priority: optional
+Section: Utilities
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 224
+Filename: ./debs/cacerts/ca-certificates_20221218_all.deb
+Size: 122464
+MD5sum: daf9e430882beda2838d3c41aecf4b7e
+SHA1: a174f7d1007e3575c2957942c0ce6a2c5b0c2dc7
+SHA256: 83d32ac7298bf325ee6a57bc45dfec45b4b9b4684bd6e2dd70bd725de7a96af1
+SHA512: ce1200c546c306e64d68eafb1f1493e611d787ac0ce1d93f92880566f50a3d05800adcf24750856e779d340996cbb64fb7acb23ffe33b481a8ba6b457a9c7181
 Description: Common CA certificates
  Contains the certificate authorities shipped with Mozilla's browser to allow SSL-based applications to check for the authenticity of SSL connections.
  .
@@ -1683,6 +1854,38 @@ SHA512: 3463f0f463fc00a35e3e1c53ad61333f73b1cc25507105b780f95515da5301c8838e6f70
 Homepage: https://github.com/apple-oss-distributions/IOKitTools
 Description: IOKit tools - ioclasscount, ioallocount and ioreg manpage
 
+Package: libjansson-dev
+Architecture: iphoneos-arm
+Version: 2.13.1
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 172
+Depends: libjansson4 (>= 2.13.1)
+Filename: ./debs/jansson/libjansson-dev_2.13.1_iphoneos-arm.deb
+Size: 66622
+MD5sum: 8a4e70ddc7729695d6b59f3dde4721a4
+SHA1: 9ce87b522c8209967c0d29e19fa2bdc7ca4b18a2
+SHA256: d73d497314fbd4284b423e2e14ea2cc66a28b38589748cdedff4ef0072af7638
+SHA512: f262b39f76462cfde4bb5c95815e017321d8b55a8c197e706ef600cbdd3415a8f3cfa1369453a293196d328daa79c9c2a3b44ee2c4d7e7961ffe9c38676f2e55
+Description: A C library for encoding, decoding and manipulating JSON (development files)
+
+Package: libjansson4
+Architecture: iphoneos-arm
+Version: 2.13.1
+Priority: optional
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 108
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/jansson/libjansson4_2.13.1_iphoneos-arm.deb
+Size: 20612
+MD5sum: fae5c8b6ab2be0c454c8bc9ed96ef8d9
+SHA1: 97a8711da2f51a70437fd74ab11d6a307a02c722
+SHA256: ff8222471ca2cc05374773ef6a5f3b96dcddbc6c837c1a62cd6dfad334669713
+SHA512: d61bc67a679a1619249898825ed65a30e0b5f921e109fd8d89daeb37482e917996a00f78b93d7d503e20987fb5dffb58c44d527415b41cc1aa17e9067b22fe28
+Description: A C library for encoding, decoding and manipulating JSON (runtime libraries)
+
 Package: jlutil
 Architecture: iphoneos-arm
 Version: 1.0
@@ -1792,6 +1995,23 @@ MD5sum: 12485f516745b42c1cadc00989595273
 SHA1: a541edbe4ad1ef5974e504466be6330d20c4ef94
 SHA256: 0d2ec8eb161628dbc491f6702cfe97e56d78330a38c222ecbf5eb454e7f56f03
 SHA512: d9e98d4409275299f561c7d0e46bb71ed7c5806040a97f17c272f7243ef299cf132b06848e41e85bfad0e3c49e5f05d1e910f8317fe499b0f52861f7b1d9555d
+Description: pseudo-codesign Mach-O files
+Author: Jay Freeman (saurik) <saurik@saurik.com>
+
+Package: ldid
+Architecture: iphoneos-arm
+Version: 2.1.5-procursus6
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 220
+Depends: libiosexec1 (>= 1.2.2), libssl3, libplist3 (>= 2.2.0)
+Filename: ./debs/ldid/ldid_2.1.5-procursus6_iphoneos-arm.deb
+Size: 68880
+MD5sum: c31e2421421d913ca6e03619a8b39f94
+SHA1: 9b39c8a6e1a612b1aa59ac7dccc33d1df5152826
+SHA256: 0931b477a61b16fd75a65a1c1dadd90113ae22473e9ecbfe9c42fdc4c508e1c1
+SHA512: 1c0afb165b914469959a4d6711bb6ffeeba3b673dca178691d46226baa7158f4adf101a856063ff241a71c4fb513e7a0e57e18df7b2cce12d6af893ce2b24f84
 Description: pseudo-codesign Mach-O files
 Author: Jay Freeman (saurik) <saurik@saurik.com>
 
@@ -1905,6 +2125,40 @@ Description: IPC library for the GnuPG components
  protocol". This protocol is used for IPC between most newer GnuPG
  components. Both server and client side functions are provided.
 
+Package: libc-ares-dev
+Architecture: iphoneos-arm
+Version: 1.17.2
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 648
+Depends: libc-ares2 (= 1.17.2)
+Filename: ./debs/libc-ares/libc-ares-dev_1.17.2_iphoneos-arm.deb
+Size: 207222
+MD5sum: b21b57a9f784987f30ece770ba5c5a1f
+SHA1: d13f60009401be662382fca2345474e5684d1485
+SHA256: 2f6a64776b3296c33ce23394316b2227b0c10fe21202939f45fd5588213ce1ff
+SHA512: f318665164f4b913245f9a8897233f93308f72cb9382d0b1436488fd804029c35c4a77ef0524c50cdc722022f927927275281ca9fb4d5aad964b1dd1d347ae0f
+Homepage: https://c-ares.haxx.se/
+Description: Development files for the c-ares asynchronous name resolver library.
+
+Package: libc-ares2
+Architecture: iphoneos-arm
+Version: 1.17.2
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 132
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/libc-ares/libc-ares2_1.17.2_iphoneos-arm.deb
+Size: 32190
+MD5sum: 9121a7e80b00bc344d51546379187873
+SHA1: dec84dd8f048f9dada90c877a34cc761903eaa71
+SHA256: 85d08f9851eb7bcb89245ef33c42a0781b93de149dd2a34ea783aa8cf40b4862
+SHA512: 12c6a3cff192d42b8e253574ed9fd3feadafb25b259effea44e5f5c945dee0031b551e06bf89ec601983f7200e2c280b6e4261e80a954ce8f9c96f41e6619cd7
+Homepage: https://c-ares.haxx.se/
+Description: Shared libraries for the c-ares asynchronous name resolver library.
+
 Package: libedit-dev
 Architecture: iphoneos-arm
 Version: 3.1-20210910
@@ -1944,6 +2198,243 @@ Description: BSD editline and history libraries
  history, and tokenization functions.
  .
  It slightly resembles GNU readline.
+
+Package: libev-dev
+Architecture: iphoneos-arm
+Version: 4.33
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 160
+Depends: libev4 (>= 4.33)
+Filename: ./debs/libev/libev-dev_4.33_iphoneos-arm.deb
+Size: 65096
+MD5sum: aa121b877f71ca59a5b0633891c75390
+SHA1: f0887270761344dfd9d69f9059f461414ed3cbc8
+SHA256: 6bd63eccb8ce992ee839347c511400954aac8a12abf8f8682cc327be8ba7b3a9
+SHA512: 1ddb3675e329d8bda915fb2e4167fb7de2f90869b571f9bf58047313294cd26ae3208b8123f8e12eb0de38a2db1c512b2e2649f69af24ab3639844a55343ae0d
+Description: static library, header files, and docs for libev
+ Static library, header files, and documentation for libev.
+ .
+ libev provides a full-featured and high-performance event loop that is
+ loosely modelled after libevent. It includes relative timers, absolute
+ timers with customized rescheduling, synchronous signals, process status
+ change events, event watchers dealing with the event loop itself, file
+ watchers, and even limited support for fork events. It uses a priority
+ queue to manage timers and uses arrays as fundamental data structure. It
+ has no artificial limitations on the number of watchers waiting for the
+ same event.
+ .
+ libev supports select, poll, epoll, kqueue, and inotify.
+
+Package: libev-libevent-dev
+Architecture: all
+Version: 4.33
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 20
+Depends: libev4 (>= 4.33), libev-dev (>= 4.33)
+Conflicts: libevent-dev
+Filename: ./debs/libev/libev-libevent-dev_4.33_all.deb
+Size: 5668
+MD5sum: 46cc49acf8c7ec0871ea7c77bfb05ce6
+SHA1: 7a08275c850b9a3488e2610fefc013f217387716
+SHA256: 6b49d0e05ec38e721c26aeb434270c72266200e3e60a2279af32435aaa770d40
+SHA512: d7fd7d4b338504d65bef8b25b8b91c9ea61066d97b47951dc6087d5820226daf5315dcc5b29686b185d8ec4ab35cd45ad619b2936f1f72b33490f1afeb4b72d6
+Description: libevent event loop compatibility wrapper for libev
+ Compatibility wrapper "event.h" to enable programs which use the
+ libevent event loop to link against libev.
+ .
+ libev provides a full-featured and high-performance event loop that is
+ loosely modelled after libevent. It includes relative timers, absolute
+ timers with customized rescheduling, synchronous signals, process status
+ change events, event watchers dealing with the event loop itself, file
+ watchers, and even limited support for fork events. It uses a priority
+ queue to manage timers and uses arrays as fundamental data structure. It
+ has no artificial limitations on the number of watchers waiting for the
+ same event.
+ .
+ libev supports select, poll, epoll, kqueue, and inotify.
+
+Package: libev4
+Architecture: iphoneos-arm
+Version: 4.33
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 100
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/libev/libev4_4.33_iphoneos-arm.deb
+Size: 20202
+MD5sum: 43660aa808c7566f6fc0363fb9f71e91
+SHA1: 7dded6316937808c24815bea8c9acca5a3374ded
+SHA256: 759c7b9f72e7929d4542c091db035afddb10096067a0a4ae5d409d3b4be75c37
+SHA512: 0dc1aa0752b744dce81ced8d903a88b235cd453331e2582d256619c96b71c97d711705e046e4daf277569b288b3e6379d7d8811795342bbfbc01e324b3537687
+Description: high-performance event loop library modelled after libevent
+ libev provides a full-featured and high-performance event loop that is
+ loosely modelled after libevent. It includes relative timers, absolute
+ timers with customized rescheduling, synchronous signals, process status
+ change events, event watchers dealing with the event loop itself, file
+ watchers, and even limited support for fork events. It uses a priority
+ queue to manage timers and uses arrays as fundamental data structure. It
+ has no artificial limitations on the number of watchers waiting for the
+ same event.
+ .
+ libev supports select, poll, epoll, kqueue, and inotify.
+
+Package: libevent-2.1-7
+Architecture: iphoneos-arm
+Version: 2.1.12-3
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 372
+Depends: libiosexec1 (>= 1.2.2), libevent-core-2.1-7 (= 2.1.12-3)
+Filename: ./debs/libevent/libevent-2.1-7_2.1.12-3_iphoneos-arm.deb
+Size: 121528
+MD5sum: 5f36f9124dfcfd3bbaf37681dca3eee7
+SHA1: bcd18278c8b5df58dac04da586bc15190e5973f2
+SHA256: ce39d1749afc5b0dc7139c619035ef71f6c8ff8b8e3ff144743abe7bb0f06f8c
+SHA512: 9c4cb2a405287a7590691847e30ab9570d8ec8f46b24c0bda341ea772c959cbe11e3545152a68dcde1baa9553165c2037ea69626cfe02ef3b8536f76901e2d49
+Description: Asynchronous event notification library
+ Libevent is an asynchronous event notification library that provides a
+ mechanism to execute a callback function when a specific event occurs
+ on a file descriptor or after a timeout has been reached.
+ .
+ It is meant to replace the asynchronous event loop found in
+ event driven network servers. Currently, libevent supports /dev/poll,
+ kqueue(2), event ports, select(2), poll(2) and epoll(4).
+ .
+ For backward compatibility and to transition to "libevent_core only"
+ or "libevent_core + libevent_extra", the libevent source package builds
+ the libevent library that includes everything in libevent_core and
+ libevent_extra.
+
+Package: libevent-core-2.1-7
+Architecture: iphoneos-arm
+Version: 2.1.12-3
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 228
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/libevent/libevent-core-2.1-7_2.1.12-3_iphoneos-arm.deb
+Size: 68842
+MD5sum: adc78a59e24f374354d9342c6498cb35
+SHA1: f6288568d2a33a68e0f38510cd6c211cf8dbf69e
+SHA256: bd4e3fa7c146fef97c15200506fb94e72849d8b84b738c2dfbbc2df47b12d81e
+SHA512: d0528102af5740b7524cdfde37d2c0b6babafb2c1f4725cdcd4325bee898928728b0341d1581fb438acd941a5fbcfcc88421aeaf36c2732fedcebd7e79ba1633
+Description: Asynchronous event notification library (core)
+ Libevent is an asynchronous event notification library that provides a
+ mechanism to execute a callback function when a specific event occurs
+ on a file descriptor or after a timeout has been reached.
+ .
+ It is meant to replace the asynchronous event loop found in
+ event driven network servers. Currently, libevent supports /dev/poll,
+ kqueue(2), event ports, select(2), poll(2) and epoll(4).
+ .
+ The libevent_core library includes event loops, timers, buffer code,
+ and various small compatibility functions.
+ .
+ If you're writing software that only uses libevent's event loop, you
+ should link against only the libevent_core library.
+
+Package: libevent-dev
+Architecture: iphoneos-arm
+Version: 2.1.12-3
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 1748
+Depends: libevent-2.1-7, libevent-core-2.1-7, libevent-extra-2.1-7, libevent-pthreads-2.1-7, libevent-openssl-2.1-7
+Filename: ./debs/libevent/libevent-dev_2.1.12-3_iphoneos-arm.deb
+Size: 394418
+MD5sum: d80a9807990d006812dfe238f61c7197
+SHA1: df24c391f0c74aa631dc0f7e7e1feadef71cb6dc
+SHA256: 42e8acacb4e4f1bf0b6f3865e81ddb3bfae716f955734ea44a0f2457f842aff1
+SHA512: c861a2a43a07b83093292a3e23b621a5ec4e938b1915c3962f043c0e03b548cb6b1d737b3d43baf598715db6484b6dd7dd567a976fed709f14ac0f253080339e
+Description: Asynchronous event notification library (development files)
+ Libevent is an asynchronous event notification library that provides a
+ mechanism to execute a callback function when a specific event occurs
+ on a file descriptor or after a timeout has been reached.
+ .
+ This package includes development files for compiling against libevent.
+
+Package: libevent-extra-2.1-7
+Architecture: iphoneos-arm
+Version: 2.1.12-3
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 176
+Depends: libiosexec1 (>= 1.2.2), libevent-core-2.1-7
+Filename: ./debs/libevent/libevent-extra-2.1-7_2.1.12-3_iphoneos-arm.deb
+Size: 50006
+MD5sum: 58c120dd3974f6efceef9d2e1845fe77
+SHA1: b36ec3e7e25541dc447e8a12755f73cfa756a0d8
+SHA256: 0b943e56208bdf9c714c29defaf976d49a006366bde24ba51f221bd5078f256d
+SHA512: d3913703e6a6e655f47279fe63d02572b0734036856a67c0f9008b036f037760c8320b24f26ec9a478dd1f5f63218672acdd22b580e1ee6504521c36f1d38565
+Description: Asynchronous event notification library (extra)
+ Libevent is an asynchronous event notification library that provides a
+ mechanism to execute a callback function when a specific event occurs
+ on a file descriptor or after a timeout has been reached.
+ .
+ It is meant to replace the asynchronous event loop found in
+ event driven network servers. Currently, libevent supports /dev/poll,
+ kqueue(2), event ports, select(2), poll(2) and epoll(4).
+ .
+ The libevent_extra library includes code for HTTP, DNS, RPC, and so
+ on.
+ .
+ If you're writing software that uses libevent's protocol support, you
+ need to link libevent_core and libevent_extra as well.
+
+Package: libevent-openssl-2.1-7
+Architecture: iphoneos-arm
+Version: 2.1.12-3
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 64
+Depends: libiosexec1 (>= 1.2.2), libevent-core-2.1-7, libssl3
+Filename: ./debs/libevent/libevent-openssl-2.1-7_2.1.12-3_iphoneos-arm.deb
+Size: 10406
+MD5sum: cf896f0c4d958a5e0b270ca2132178fe
+SHA1: 553cd6c71ae09c1c9d8279e4ebba2b1211655038
+SHA256: 8c21b9285e4199bd33efbac961664fc1c01943e2ec6c4c8d2681d6ff161919e0
+SHA512: e936fa7d6e49cf336a0dd53a0602d7c984955056733b5284ab1506d6f27bb78481c5944e8f31485e69aa7fd84382b55db56255011c06c3cc8bf52adaea5812a4
+Description: Asynchronous event notification library (openssl)
+ Libevent is an asynchronous event notification library that provides a
+ mechanism to execute a callback function when a specific event occurs
+ on a file descriptor or after a timeout has been reached.
+ .
+ It is meant to replace the asynchronous event loop found in
+ event driven network servers. Currently, libevent supports /dev/poll,
+ kqueue(2), event ports, select(2), poll(2) and epoll(4).
+ .
+ There is now a bufferevent type that supports SSL/TLS using the
+ OpenSSL library.  The code for this is build in a separate
+ library, libevent_openssl, so that your programs don't need to
+ link against OpenSSL unless they actually want SSL support.
+
+Package: libevent-pthreads-2.1-7
+Architecture: iphoneos-arm
+Version: 2.1.12-3
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 60
+Depends: libiosexec1 (>= 1.2.2), libevent-core-2.1-7
+Filename: ./debs/libevent/libevent-pthreads-2.1-7_2.1.12-3_iphoneos-arm.deb
+Size: 4828
+MD5sum: 21c8fa90a89e10a2eb7cabe69bc7ee3b
+SHA1: a7fa2c0cbf83d996a00282b72f6260a9cf423b99
+SHA256: af10c5a474d9028d90589c7eab3b88dbedbd05c2959523f200e311132f7242f3
+SHA512: 96a1a9af3b13eed6eb9dd05d565ceda82bf8c45618161b6336c4d1246a5a01e6d44d1ecf9f616a46aaf95de576a922bf4ca0b321eee1fdbc2937a092892b5734
+Description: Asynchronous event notification library (pthreads)
+ Libevent is an asynchronous event notification library that provides a
+ mechanism to execute a callback function when a specific event occurs
+ on a file descriptor or after a timeout has been reached.
+ .
+ It is meant to replace the asynchronous event loop found in
+ event driven network servers. Currently, libevent supports /dev/poll,
+ kqueue(2), event ports, select(2), poll(2) and epoll(4).
+ .
+ If you want threading support and you're using pthreads, you'll need
+ to link against the libevent_pthreads library in addition to
+ libevent_core.
 
 Package: libffi-dev
 Architecture: iphoneos-arm
@@ -2254,6 +2745,45 @@ SHA512: 3ce1399ee8b35c21dd16dd878160d9791f3ab46416e643d17764ad17470e72984c5456ce
 Homepage: http://github.com/ProcursusTeam/libiosexec
 Description: shim for execve w/ shell script support
 
+Package: libjemalloc-dev
+Architecture: iphoneos-arm
+Version: 5.2.1-3
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 7900
+Depends: libjemalloc2 (= 5.2.1-3)
+Filename: ./debs/libjemalloc/libjemalloc-dev_5.2.1-3_iphoneos-arm.deb
+Size: 1533294
+MD5sum: cd7898403382d51319f849744ca9ee31
+SHA1: cd842936e81a574f2fa34f64e3df0c2525a09068
+SHA256: d749d57e991450da400a48cc70ed0f638408d962ef09f581db4a5848ba94b552
+SHA512: 29d036aedebacb00a62196b287e8bc8fb94eb1f09b2dfbb9157b2690827fe60bc948b81bddc10a0fc257d625203cfb8984d60758aa327c71bfa8f8234ea22aa8
+Description: development files and documentation for jemalloc
+ Files used for development with jemalloc. This package contains
+ headers and documentation.
+ .
+ jemalloc is a library providing a malloc(3) implementation for
+ multi-threaded processes on multi-processor systems.
+
+Package: libjemalloc2
+Architecture: iphoneos-arm
+Version: 5.2.1-3
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 396
+Filename: ./debs/libjemalloc/libjemalloc2_5.2.1-3_iphoneos-arm.deb
+Size: 122192
+MD5sum: 6c0b6f8e76e682c82637770d7a3d795b
+SHA1: 42805ca8f054052d1f243cf20e0939fec3c21b52
+SHA256: c7f45542aff705db7a1c1e8e0371ea63d01a1682336f24d1bb4ee86bc2ade703
+SHA512: 451f198586a56928ebc189c62e8f9c89507e30ab6acd714c666c361343d45b6e984bd25b9096a28d4a6e537559e97bea42904af24009ce8acb8effc43f7e4173
+Description: general-purpose scalable concurrent malloc(3) implementation
+ A library providing a malloc(3) implementation for multi-threaded processes on
+ multi-processor systems.
+ .
+ Notable features are reduced lock contention, predictable low fragmentation,
+ and introspection with heap profiling.Depends: libiosexec1 (>= 1.2.2)
+
 Package: libkernrw-dev
 Architecture: iphoneos-arm
 Version: 1.0-1
@@ -2353,6 +2883,36 @@ Description: X.509 and CMS support library
  Encoder, Certificate Handling and CMS Handling.
  .
  This package contains the runtime library files.
+
+Package: liblzo2-2
+Architecture: iphoneos-arm
+Version: 2.10
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 180
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/liblzo2/liblzo2-2_2.10_iphoneos-arm.deb
+Size: 48330
+MD5sum: 97f3320d7ed8c4eb1c8b3b66b4a7eab3
+SHA1: 8d5e011327ea0f02e8a796fc833b11204b795ac1
+SHA256: 003cb88747c0dbd2084aab6f5e4d35b7827dd6846fe3dde0dce4d6642b98c1a6
+SHA512: e4b3918d8c5af3d896342b2f83c9824a96b80f22f08ecb7659455372b4b3af081e58016b8de12e4d4d656d5c9e2a0059c65f5d19d6e34080b2d9be0cce6871c3
+Description: Portable lossless data compression library
+
+Package: liblzo2-dev
+Architecture: iphoneos-arm
+Version: 2.10
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 664
+Depends: liblzo2-2 (= 2.10)
+Filename: ./debs/liblzo2/liblzo2-dev_2.10_iphoneos-arm.deb
+Size: 152992
+MD5sum: 75ddff13c5112c6739e34fb808f77961
+SHA1: 09bef5af35325a05ed48681463170b6afa2cdce2
+SHA256: 36b52fbae166bf5f2f302c8c76daf54fc46ddb3a452eaf734bfe55d333f99e15
+SHA512: 91c524612998ac535fd3d07e95be8459f7b6b055b5c0ccf3c1bbd424c8ba2746d9c7d6f7ad73d51c8d91b99cd717ba7318ee7e5af86ca2b8a8abd3c80f259cae
+Description: Portable lossless data compression library
 
 Package: libmd-dev
 Architecture: iphoneos-arm
@@ -2738,6 +3298,117 @@ Description: multiple-precision integer library [runtime]
  This package contains the library needed to run programs that
  use LibTomMath.
 
+Package: libltdl-dev
+Architecture: iphoneos-arm
+Version: 2.4.7
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 1036
+Depends: libltdl7 (= 2.4.7)
+Filename: ./debs/libtool/libltdl-dev_2.4.7_iphoneos-arm.deb
+Size: 229622
+MD5sum: 8413d2acaf7ddc835300c7bd68e33494
+SHA1: cf44c2a10c3c57aa42300030c81bb6dc73559398
+SHA256: c2b41f77768bbbff063420844c4f13c8c40be8488ec00ad099ecadfe0bf6a5a4
+SHA512: 68bd8275e086113c17ae06eecf5ad33e4c6235939dc06343ed65dfd94470ee500aa47f41c814972bad811b8b35d90d7b37f5ac2134b56b0539ddd062697f631b
+Description: System independent dlopen wrapper for GNU libtool
+ This package contains the header files and static libraries for the
+ libltdl package.
+ .
+ A small library that aims at hiding the various difficulties of
+ dlopening libraries from programmers.  It is a system independent
+ dlopen wrapper for GNU libtool.
+ .
+ It supports the following dlopen interfaces:
+   * dlopen (Solaris, Linux and various BSD flavors)
+   * shl_load (HP-UX)
+   * LoadLibrary (Win16 and Win32)
+   * load_add_on (BeOS)
+   * GNU DLD (emulates dynamic linking for static libraries)
+   * libtool's dlpreopen
+
+Package: libltdl7
+Architecture: iphoneos-arm
+Version: 2.4.7
+Priority: optional
+Section: Libraries
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 152
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/libtool/libltdl7_2.4.7_iphoneos-arm.deb
+Size: 57762
+MD5sum: 5287f55af520dd372c48ca475d2b4fdb
+SHA1: 1b7de55702d9fa87c9a9f7d524b29046e899c923
+SHA256: 95a9d6c41ea481f0ddd919dfefe9420ad1d2b6c6e77af59c758273b4a141c77e
+SHA512: 897b2d02752ecd603274e38250068c53ba2d3ae71e29dcdf7bb305a0dd391599897d04b6a0950b8446c73c55e10727d6f60541e64ddbfaa61a8cd8c9e2157e50
+Description: System independent dlopen wrapper for GNU libtool
+ This package contains the run-time libltdl library.
+ .
+ A small library that aims at hiding the various difficulties of
+ dlopening libraries from programmers.  It is a system independent
+ dlopen wrapper for GNU libtool.
+ .
+ It supports the following dlopen interfaces:
+   * dlopen (Solaris, Linux and various BSD flavors)
+   * shl_load (HP-UX)
+   * LoadLibrary (Win16 and Win32)
+   * load_add_on (BeOS)
+   * GNU DLD (emulates dynamic linking for static libraries)
+   * libtool's dlpreopen
+
+Package: libtool-bin
+Architecture: iphoneos-arm
+Version: 2.4.7
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 436
+Depends: libtool (>= 2.4.7)
+Filename: ./debs/libtool/libtool-bin_2.4.7_iphoneos-arm.deb
+Size: 123884
+MD5sum: d4b52a5ca9d5bb1015d73b0e05d6f384
+SHA1: 4c165d2338998712535714ec038b74efa7a257c4
+SHA256: a4597537e26c203f9b45b4972ee089d3833d2c29bc32e643b6c02b1b9af95d1f
+SHA512: 7ad9464a4d88a687db900e9178c84669a6bba6c5d8a7c9ac5c2bb879a0c127e0b9233314d3e6ba585909a397c4c8a561cb3a4c75d584791efc6d602bb8ebb305
+Description: Generic library support script (glibtool binary)
+ This is GNU libtool, a generic library support script.  Libtool hides
+ the complexity of generating special library types (such as shared
+ libraries) behind a consistent interface.  To use libtool, add the
+ new generic library building commands to your Makefile, Makefile.in,
+ or Makefile.am.  See the documentation for details.  Libtool supports
+ building static libraries on all platforms.
+ .
+ Libtool supports generation of C, C++, Fortran and Java libraries.
+ .
+ This package contains the glibtool binary only. It is not necessary
+ for normal development on Darwin platforms. For Apple's non-prefixed
+ libtool, install Darwin CC Tools (odcctools).
+
+Package: libtool
+Architecture: iphoneos-arm
+Version: 2.4.7
+Priority: optional
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 1016
+Depends: clang, file
+Filename: ./debs/libtool/libtool_2.4.7_iphoneos-arm.deb
+Size: 226924
+MD5sum: 018c74ada9eb012f8dba53bf1f591e63
+SHA1: 50290600b1fc0f0a205df549211111a38d41f363
+SHA256: 91be20aa194eadb50bf5276efbd5b8a0b9ba679f90dafa320122900515e88de6
+SHA512: f7ec79224615ca524188a92df380537c6242eff00e2fc68ce077311e69e35eeb21de7255443684357557d7e7ec675108022f027e7ad2c5ca85633b089a062926
+Description: Generic library support script
+ This is GNU libtool, a generic library support script.  Libtool hides
+ the complexity of generating special library types (such as shared
+ libraries) behind a consistent interface.  To use libtool, add the
+ new generic library building commands to your Makefile, Makefile.in,
+ or Makefile.am.  See the documentation for details.  Libtool supports
+ building static libraries on all platforms.
+ .
+ Libtool supports generation of C, C++, Fortran and Java libraries.
+
 Package: libunistring-dev
 Architecture: iphoneos-arm
 Version: 0.9.10-2
@@ -2778,6 +3449,44 @@ SHA256: b4b1ca481abd32d0e3c64199294f96a51946910cfdb382028b31a4c8f788e663
 SHA512: ef80e2cd27707c90b4249e0b851350f0bfe8c83a172244bf31cabfc21ddd32a9c6dfd0f1d40ccfaa166160797f72a41f192dccdf7ee930d220c672f694737a6c
 Homepage: https://www.gnu.org/software/libunistring/
 Description: Unicode string library for C
+
+Package: libusb-1.0-0-dev
+Architecture: iphoneos-arm
+Version: 1.0.26
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 388
+Depends: libusb-1.0-0 (= 1.0.26)
+Filename: ./debs/libusb/libusb-1.0-0-dev_1.0.26_iphoneos-arm.deb
+Size: 160338
+MD5sum: c66bf3788c4dadcae4e0c4d71299ef2d
+SHA1: 982b4c4b0c9df410aadd7be7a750f375f0dba53f
+SHA256: ed92477710cba5e0785a0b0dc4cffec7d411c0afc84787e5270166e929c93dae
+SHA512: 2d5e7b633c0680b8ddf87dc547feee77d4a642c939da9582814e8649f2f9cbb213f4f0e9819474ed975dee25c7d98220fec45a160cd4b126818f41f38d85f27c
+Description: userspace USB programming library development files
+ Library for programming USB applications.
+ .
+ This package contains what you need for compiling sources that
+ use this library in your own code.
+
+Package: libusb-1.0-0
+Architecture: iphoneos-arm
+Version: 1.0.26
+Section: Development
+Maintainer: Procursus Team <support@procurs.us>
+Installed-Size: 188
+Depends: libiosexec1 (>= 1.2.2)
+Filename: ./debs/libusb/libusb-1.0-0_1.0.26_iphoneos-arm.deb
+Size: 49982
+MD5sum: c2e6a4d8904ef748521083969f68750a
+SHA1: 092535a5c4bc4c33c6d6959601bea673248e9f2e
+SHA256: 807318b124c27ad70a985e69cfa809f6c6e65cd480587ec8d13577b8b1292800
+SHA512: dcf46755c90a2a8b14bee827f68b77ebd9369fc60090f282e29c1582793f1d70407c77b928bd5f3386eab77d74d761472d1bb42518271b681eab546dbf041308
+Description: userspace USB programming library
+ Library for programming USB applications.
+ .
+ This package contains what you need to run programs that use this
+ library.
 
 Package: libcrypt-dev
 Architecture: iphoneos-arm
