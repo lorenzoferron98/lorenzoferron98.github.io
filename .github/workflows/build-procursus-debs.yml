@@ -27,7 +27,7 @@ jobs:
       - name: Boostrap Procursus
         run: |
           dir="${{ steps.download-zstd.outputs.DIR }}" && cd "${dir}"
-          curl -L https://apt.procurs.us/bootstrap_darwin-amd64.tar.zst -o bootstrap.tar.zst
+          curl -L https://apt.procurs.us/bootstraps/big_sur/bootstrap-darwin-amd64.tar.zst -o bootstrap.tar.zst
           ./zstd -dk bootstrap.tar.zst
           sudo tar -xvpkf ./bootstrap.tar -C / || :
           cd -
@@ -868,7 +868,7 @@ jobs:
       - name: Boostrap Procursus
         run: |
           dir="${{ steps.download-zstd.outputs.DIR }}" && cd "${dir}"
-          curl -L https://apt.procurs.us/bootstrap_darwin-amd64.tar.zst -o bootstrap.tar.zst
+          curl -L https://apt.procurs.us/bootstraps/big_sur/bootstrap-darwin-amd64.tar.zst -o bootstrap.tar.zst
           ./zstd -dk bootstrap.tar.zst
           sudo tar -xvpkf ./bootstrap.tar -C / || :
           cd -
@@ -984,7 +984,7 @@ jobs:
       - name: Boostrap Procursus
         run: |
           dir="${{ steps.download-zstd.outputs.DIR }}" && cd "${dir}"
-          curl -L https://apt.procurs.us/bootstrap_darwin-amd64.tar.zst -o bootstrap.tar.zst
+          curl -L https://apt.procurs.us/bootstraps/big_sur/bootstrap-darwin-amd64.tar.zst -o bootstrap.tar.zst
           ./zstd -dk bootstrap.tar.zst
           sudo tar -xvpkf ./bootstrap.tar -C / || :
           cd -
