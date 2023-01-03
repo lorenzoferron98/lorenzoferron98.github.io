@@ -103,727 +103,727 @@ jobs:
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake ldid-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake ldid-package
 
       - name: Build libplist
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libplist-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libplist-package
 
       - name: Build apt
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake apt-package AARCH64_CCASFLAGS=""
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake apt-package AARCH64_CCASFLAGS=""
 
       - name: Build base
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake base-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake base-package
 
       - name: Build bash
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake bash-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake bash-package
 
       - name: Build bash-completion
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake bash-completion-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake bash-completion-package
 
       - name: Build brotli
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake brotli-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake brotli-package
 
       - name: Build cacerts
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake cacerts-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake cacerts-package
 
       - name: Build chariz-keyring
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake chariz-keyring-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake chariz-keyring-package
 
       - name: Build coreutils
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake coreutils-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake coreutils-package
 
       - name: Build darwintools
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake darwintools-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake darwintools-package
 
       - name: Build dash
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake dash-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake dash-package
 
       - name: Build debianutils
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake debianutils-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake debianutils-package
 
       - name: Build diffutils
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake diffutils-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake diffutils-package
 
       - name: Build diskdev-cmds
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake diskdev-cmds-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake diskdev-cmds-package
 
       - name: Build dpkg
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake dpkg-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake dpkg-package
 
       - name: Build essential
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake essential-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake essential-package
 
       - name: Build file-cmds
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake file-cmds-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake file-cmds-package
 
       - name: Build findutils
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake findutils-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake findutils-package
 
       - name: Build firmware-sbin
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake firmware-sbin-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake firmware-sbin-package
 
       - name: Build gnupg
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake gnupg-package AARCH64_CCASFLAGS=""
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake gnupg-package AARCH64_CCASFLAGS=""
 
       - name: Build grep
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake grep-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake grep-package
 
       - name: Build havoc-keyring
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake havoc-keyring-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake havoc-keyring-package
 
       - name: Build launchctl
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake launchctl-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake launchctl-package
 
       - name: Build libassuan
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libassuan-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libassuan-package
 
       - name: Build libxcrypt
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libxcrypt-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libxcrypt-package
 
       - name: Build dimentio
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake dimentio-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake dimentio-package
 
       - name: Build libedit
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libedit-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libedit-package
 
       - name: Build libffi
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libffi-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libffi-package
 
       - name: Build libgcrypt
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libgcrypt-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libgcrypt-package
 
       - name: Build libgmp10
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libgmp10-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libgmp10-package
 
       - name: Build gnutls
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake gnutls-package AARCH64_CCASFLAGS=""
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake gnutls-package AARCH64_CCASFLAGS=""
 
       - name: Build libgpg-error
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libgpg-error-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libgpg-error-package
 
       - name: Build neofetch
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake neofetch-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake neofetch-package
 
       - name: Build libidn2
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libidn2-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libidn2-package
 
       - name: Build gettext
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake gettext-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake gettext-package
 
       - name: Build dropbear
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake dropbear-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake dropbear-package
 
       - name: Build libiosexec
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libiosexec-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libiosexec-package
 
       - name: Build libkernrw
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libkernrw-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libkernrw-package
 
       - name: Build lz4
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake lz4-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake lz4-package
 
       - name: Build xz
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake xz-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake xz-package
 
       - name: Build libmd
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libmd-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libmd-package
 
       - name: Build ncurses
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake ncurses-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake ncurses-package
 
       - name: Build nettle
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake nettle-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake nettle-package
 
       - name: Build npth
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake npth-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake npth-package
 
       - name: Build p11-kit
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake p11-kit-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake p11-kit-package
 
       - name: Build openpam
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake openpam-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake openpam-package
 
       - name: Build readline
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake readline-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake readline-package
 
       - name: Build libtasn1
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libtasn1-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libtasn1-package
 
       - name: Build libunistring
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libunistring-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libunistring-package
 
       - name: Build xxhash
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake xxhash-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake xxhash-package
 
       - name: Build zlib-ng
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake zlib-ng-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake zlib-ng-package
 
       - name: Build zstd
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake zstd-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake zstd-package
 
       - name: Build odyssey-keyring
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake odyssey-keyring-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake odyssey-keyring-package
 
       - name: Build openssh
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake openssh-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake openssh-package
 
       - name: Build openssl
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake openssl-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake openssl-package
 
       - name: Build packix-keyring
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake packix-keyring-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake packix-keyring-package
 
       - name: Build keyring
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake keyring-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake keyring-package
 
       - name: Build profile.d
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake profile.d-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake profile.d-package
 
       - name: Build sed
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake sed-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake sed-package
 
       - name: Build shell-cmds
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake shell-cmds-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake shell-cmds-package
 
       - name: Build shshd
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake shshd-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake shshd-package
 
       - name: Build snaputil
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake snaputil-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake snaputil-package
 
       - name: Build sudo
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake sudo-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake sudo-package
 
       - name: Build tar
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake tar-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake tar-package
 
       - name: Build uikittools
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake uikittools-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake uikittools-package
 
       - name: Build vi
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake vi-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake vi-package
 
       - name: Build zsh
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake zsh-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake zsh-package
 
       - name: Build nano
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake nano-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake nano-package
 
       - name: Build jlutil
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake jlutil-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake jlutil-package
 
       - name: Build curl
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake curl-package AARCH64_CCASFLAGS=""
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake curl-package AARCH64_CCASFLAGS=""
 
       - name: Build cowsay
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake cowsay-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake cowsay-package
 
       - name: Build file
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake file-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake file-package
 
       - name: Build git
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake git-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake git-package
 
       - name: Build htop
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake htop-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake htop-package
 
       - name: Build make
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake make-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake make-package
 
       - name: Build p7zip
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake p7zip-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake p7zip-package
 
       - name: Build gawk
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake gawk-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake gawk-package
 
       - name: Build gettext-localizations
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake gettext-localizations-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake gettext-localizations-package
 
       - name: Build gzip
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake gzip-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake gzip-package
 
       - name: Build mpfr4
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake mpfr4-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake mpfr4-package
 
       - name: Build pam-modules
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake pam-modules-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake pam-modules-package
 
       - name: Build pcre
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake pcre-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake pcre-package
 
       - name: Build system-cmds
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake system-cmds-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake system-cmds-package
 
       - name: Build unzip
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake unzip-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake unzip-package
 
       - name: Build zip
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake zip-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake zip-package
 
       - name: Build unrar
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake unrar-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake unrar-package
 
       - name: Build nickchan-keyring
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake nickchan-keyring-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake nickchan-keyring-package
 
       - name: Build nyuszika7h-keyring
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake nyuszika7h-keyring-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake nyuszika7h-keyring-package
 
       - name: Build amy-keyring
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake amy-keyring-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake amy-keyring-package
 
       - name: Build adv-cmds
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake adv-cmds-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake adv-cmds-package
 
       - name: Build bzip2
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake bzip2-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake bzip2-package
 
       - name: Build iokittools
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake iokittools-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake iokittools-package
 
       - name: Build less
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake less-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake less-package
 
       - name: Build kext-tools
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake kext-tools-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake kext-tools-package
 
       - name: Build libarchive
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libarchive-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libarchive-package
 
       - name: Build network-cmds
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake network-cmds-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake network-cmds-package
 
       - name: Build lsof
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake lsof-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake lsof-package
 
       - name: Build plutil
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake plutil-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake plutil-package
 
       - name: Build text-cmds
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake text-cmds-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake text-cmds-package
 
       - name: Build vim
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake vim-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake vim-package
 
       - name: Build defaults
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake defaults-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake defaults-package
 
       - name: Build uuid
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake uuid-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake uuid-package
 
       - name: Build libksba
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libksba-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libksba-package
 
       - name: Build libtommath
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libtommath-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libtommath-package
 
       - name: Build libtomcrypt
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libtomcrypt-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libtomcrypt-package
 
       - name: Build rtmpdump
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake rtmpdump-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake rtmpdump-package
 
       - name: Build libssh2
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libssh2-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libssh2-package
 
       - name: Build nghttp2
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake nghttp2-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake nghttp2-package
 
       - name: Build build-essential
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake build-essential-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake build-essential-package
 
       - name: Build jtool2
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake jtool2-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake jtool2-package
 
       - name: Build xar
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake xar-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake xar-package
 
       - name: Build berkeleydb
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake berkeleydb-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake berkeleydb-package
 
       - name: Build libtool
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libtool-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libtool-package
           
       - name: Build libusb
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libusb-package          
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libusb-package          
 
       - name: Build libc-ares
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libc-ares-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libc-ares-package
           
       - name: Build libev
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libev-package  
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libev-package  
 
       - name: Build jansson
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake jansson-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake jansson-package
           
       - name: Build libjemalloc
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libjemalloc-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libjemalloc-package
 
       - name: Build libevent
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake libevent-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake libevent-package
 
       - name: Build liblzo2
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake liblzo2-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake liblzo2-package
 
       # Instead of running `actions/cache@v3` directly, check it out locally.
       - name: Checkout actions/cache@v3
@@ -962,7 +962,7 @@ jobs:
         if: ${{ success() || failure() }}
         working-directory: ./Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake llvm-package
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake llvm-package
 
 
   package:
@@ -1082,7 +1082,7 @@ jobs:
         if: ${{ success() || failure() }}
         working-directory: Procursus
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} NO_PGP=1 gmake bootstrap      
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} gmake bootstrap      
 
       - name: Checkout binpack
         if: ${{ success() || failure() }}
@@ -1096,7 +1096,7 @@ jobs:
         if: ${{ success() || failure() }}
         working-directory: binpack
         run: |
-          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} MEMO_NO_IOSEXEC=1 NO_PGP=1 BINPACK_THICK=1 gmake binpack
+          MEMO_TARGET=$MEMO_TARGET MEMO_CFVER=${{ matrix.cfver }} MEMO_NO_IOSEXEC=1 BINPACK_THICK=1 gmake binpack
 
       - name: Checkout my repo
         if: ${{ success() || failure() }}
